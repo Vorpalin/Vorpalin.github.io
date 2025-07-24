@@ -1,4 +1,14 @@
 pixel-btn{
-  position: relative
+  position: relative;
+  width: 180px;
+  height: 60px;
+  border: none;
+  background: #333;
+  color: white;
+  font-size: 1.15em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  outline: none;
 }
 
