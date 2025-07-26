@@ -44,3 +44,33 @@ btn-social::after {
   display: flex;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2rem;
+  background-color: #121212; /* Dark background */
+  color: #f5f5f5;             /* Light text */
+  margin: 0;
+}
+
+.title {
+	font-family: 'Poppins', sans-serif;
+	font-size: 30px;
+	text-transform: uppercase;
+	text-align: center;
+	background: linear-gradient(to right,
+			#fc72ff, #8f68ff, #487bff, 
+			#8f68ff, #fc72ff);
+	background-size: 200%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animate-gradient 2.5s linear
+		infite;
+}
+
+@keyframes animate-gradient{
+	to {
+		background-position: 200%;
+	}
+}
