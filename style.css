@@ -1,14 +1,46 @@
-pixel-btn{
+@property --fill {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 0%;
+}
+
+btn-social {
   position: relative;
-  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  aspect-ratio: 1;
+  font-size: 1.5rem;
+  color: #7a7a7a;
+  background-color: #373737;
+  border-radius: 50%;
+  transition: color 0.5s ease-in-out;
+}
+
+btn-social:hover {
+  color: greenyellow;
+  --fill: 100;
+}
+
+btn-social::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  inset: -3px;
+  border-radius: inherit;
+
+  background: conic-gradient
+    ( greenyellow var(--fill),
+    transparent var(--fill));
+  transition: --fill 0.6s ease-in-out;
+}
+
+
+.circular-button {
+  width: 60px;
   height: 60px;
-  border: none;
-  background: #333;
-  color: white;
-  font-size: 1.15em;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  cursor: pointer;
-  outline: none;
+  border-radius: 50%;
+  display: flex;
 }
 
