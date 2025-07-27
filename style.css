@@ -51,6 +51,7 @@ body {
   justify-content: center;     /* Center vertically */
   align-items: center;         /* Center horizontally */
   font-family: Arial, sans-serif;
+  padding-top: 70px; /* Adjust depending on nav height */
   text-align: center;
   padding: 2rem;
   background-color: #121212; /* Dark background */
@@ -127,4 +128,77 @@ body {
   width: 80%;
   height: auto;
   border-radius: 10px;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #07182E;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+/* Flex layout for logo + links */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo (left side) */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Nav links (right side) */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-list li a {
+  color: #8f68ff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+  color: #00b7ff;
+}
+
+/* Center everything inside the section */
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* Center horizontally */
+  justify-content: center;  /* Optional: vertical centering if you give a height */
+  text-align: center;
+  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+p {
+	font-family: 'Poppins', sans-serif;
+	font-size: 15px;
+	
+	text-align: center;
+	background: linear-gradient(to right,
+			#fc72ff, #8f68ff, #487bff, 
+			#8f68ff, #fc72ff);
+	background-size: 200%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animate-gradient 2.5s linear
+		infite;
 }
