@@ -1,4 +1,5 @@
 import "./Home.css"
+import photoLinkedin from "../../assets/photo_linkedin.jpg"
 
 function Home() {
     return (
@@ -7,7 +8,7 @@ function Home() {
 
                 <img
                     className="profile-picture"
-                    src="/imgs/photo_linkedin.jpg"
+                    src={photoLinkedin}
                     alt="Alexis MIALON"
                 />
 
