@@ -1,0 +1,94 @@
+.home {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 100px 20px 40px;
+
+    text-align: center;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 180px;
+    height: 180px;
+
+    object-fit: cover;
+    object-position: center 30%;
+
+    border-radius: 50%;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.3s ease;
+}
+
+.profile-picture:hover {
+    transform: scale(1.05);
+}
+
+.home h1 {
+    margin: 0;
+
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.home h2 {
+    margin-top: 15px;
+
+    font-size: 1.3rem;
+    font-weight: 400;
+
+    opacity: 0.8;
+}
+
+.home h2 span {
+    margin-left: 8px;
+
+    font-weight: 600;
+}
+
+.home p {
+    max-width: 600px;
+
+    margin-top: 20px;
+
+    font-size: 1.1rem;
+    line-height: 1.6;
+
+    opacity: 0.75;
+}
+
+.home-buttons {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.home-buttons a {
+    padding: 12px 24px;
+
+    border: 1px solid currentColor;
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    transition: 0.2s;
+}
+
+.home-buttons a:hover {
+    transform: translateY(-3px);
+}
