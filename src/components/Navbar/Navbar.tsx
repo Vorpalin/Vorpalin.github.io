@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import "./Navbar.css";
 
-const LINKS = [
+interface NavLink {
+  id: string;
+  label: string;
+}
+
+const LINKS: NavLink[] = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
   { id: "education", label: "Education" },
@@ -15,12 +20,12 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const sections = LINKS.map((l) => document.getElementById(l.id)).filter(
-      Boolean
-    );
+    const sections = LINKS
+      .map((l) => document.getElementById(l.id))
+      .filter((el): el is HTMLElement => el !== null);
 
     const observer = new IntersectionObserver(
-  (entries) => {
+      (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActive(entry.target.id);
@@ -37,8 +42,7 @@ function Navbar() {
   const renderLink = (link: NavLink) => {
     const isActive = active === link.id;
     return (
-
-    <a
+      <a
         key={link.id}
         href={`#${link.id}`}
         className={isActive ? "active" : ""}
@@ -66,7 +70,6 @@ function Navbar() {
       <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
         {LINKS.map(renderLink)}
       </div>
-
     </nav>
   );
 }
