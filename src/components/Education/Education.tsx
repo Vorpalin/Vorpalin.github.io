@@ -1,6 +1,6 @@
 function Education() {
     return (
-        <section id="Education" className="section">
+        <section id="education" className="section">
         </section>
     );
 }
