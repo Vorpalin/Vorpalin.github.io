@@ -21,7 +21,7 @@ import {
 } from "react-icons/si";
 
 import { TbBrandCSharp } from "react-icons/tb";
-import { FaJava, FaWindows, FaHtml5, FaCss3Alt } from "react-icons/fa";
+import { FaJava, FaWindows, FaHtml5 } from "react-icons/fa";
 import "./Skills.css";
 
 function Skills() {
