@@ -20,11 +20,7 @@ function Home() {
                 </h2>
 
                 <p>
-                    Student-researcher pursuing an Computer Science 
-                    Engineering degree at EPITA. Passionate about computer 
-                    science and artificial intelligence in particular,
-                    I am eager to learn and apply my skills 
-                    to real-world projects.
+                    Passionate about computer science
                 </p>
 
             </div>

@@ -1,0 +1,128 @@
+.skills {
+    padding: 6rem 2rem;
+}
+
+.skills h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1.5rem;
+
+    max-width: 1000px;
+    margin: auto;
+}
+
+.skill-card {
+    padding: 1.8rem;
+
+    border: 1px solid #333;
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.02);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #666;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+
+    font-size: 1.2rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 0.7rem;
+}
+
+.skill-tags span {
+    padding: 0.5rem 0.9rem;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.skill-tags span:hover {
+    transform: translateY(-2px);
+
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.skill-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.skill-icons svg {
+    width: 42px;
+    height: 42px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+.skill-icons svg:hover {
+    transform: translateY(-5px) scale(1.15);
+}
+
+.language-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+
+    min-width: 100px;
+}
+
+.language-icon {
+    font-size: 2.5rem;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+.language-item:hover .language-icon {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.language-name {
+    font-weight: 500;
+}
+
+.language-level {
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
