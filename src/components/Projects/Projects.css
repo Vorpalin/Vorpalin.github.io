@@ -140,3 +140,40 @@
     transform: scale(1.4);
     background: #aaa;
 }
+
+.project-card {
+    overflow: hidden;
+
+    border: 1px solid #333;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.project-image-container {
+    width: 100%;
+    height: 280px;
+
+    overflow: hidden;
+
+    border-bottom: 1px solid #333;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.04);
+}
+
+.project-content {
+    padding: 2rem;
+}

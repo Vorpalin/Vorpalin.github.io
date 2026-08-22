@@ -8,6 +8,7 @@ type Project = {
     description: string;
     technologies: string[];
     github?: string;
+    image?: string;
 };
 
 const projects: Project[] = [
@@ -65,18 +66,21 @@ const projects: Project[] = [
             "An application developed in Python and SQL that allows users to create custom monsters and search for them by name, characteristics, or even a photo.",
         technologies: ["Python", "Git", "SQL", "Tensorflow"],
         github: "https://github.com/Vorpalin/Pokedex",
+        image: "/projects/monster_binder.jpg",
     },
     {
         title: "Space Invaders",
         description:
             "Creating a Space Invaders game in 68000 assembly language.",
         technologies: ["Assembly Programming"],
+        image: "/projects/space_invaders.jpg",
     },
     {
         title: "SolveSmart",
         description:
             "Application developed in C, capable of solving a word search puzzle from an image.",
         technologies: ["C", "Git", "AI", "Teamwork", "Image Processing"],
+        image: "/projects/solvesmart.jpg",
     },
     {
         title: "Simucorp",
@@ -84,6 +88,7 @@ const projects: Project[] = [
             "2D local business management game developed with Unity",
         technologies: ["C#", "Git", "Unity", "Teamwork", "LaTeX", "Project Management"],
         github: "https://github.com/SimuCorp/SIMUCORP",
+        image: "/projects/simucorp.jpg",
     },
     {
         title: "AFIT",
@@ -129,6 +134,14 @@ function Projects() {
                     </span>
 
                     <h3>{project.title}</h3>
+
+                    {project.image && (
+                        <img
+                            src={project.image}
+                            alt={`Screenshot of ${project.title}`}
+                            className="project-image"
+                        />
+                    )}
 
                     <p>{project.description}</p>
 
