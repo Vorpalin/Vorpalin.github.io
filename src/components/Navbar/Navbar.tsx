@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Sun, Moon } from "lucide-react";
 import "./Navbar.css";
 
 interface NavLink {
@@ -16,6 +17,22 @@ const LINKS: NavLink[] = [
 ];
 
 function Navbar() {
+  const [theme, setTheme] = useState<"dark" | "light">(() => {
+        const savedTheme = localStorage.getItem("theme");
+
+        return savedTheme === "light" ? "light" : "dark";
+    });
+
+  useEffect(() => {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+    }, [theme]);
+
+  const toggleTheme = () => {
+        setTheme((currentTheme) =>
+            currentTheme === "dark" ? "light" : "dark"
+        );
+    };
   const [active, setActive] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -70,6 +87,15 @@ function Navbar() {
       <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
         {LINKS.map(renderLink)}
       </div>
+
+      <button
+        className="theme-toggle"
+        onClick={toggleTheme}
+        aria-label="Toggle theme"
+      >
+
+        {theme === "dark" ? <Sun /> : <Moon />}
+      </button>
     </nav>
   );
 }
