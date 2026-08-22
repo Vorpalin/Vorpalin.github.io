@@ -79,10 +79,21 @@
 .skill-icons {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
 }
 
-.skill-icons svg {
+.skill-icon {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+}
+
+.skill-icon svg {
     width: 42px;
     height: 42px;
 
@@ -93,8 +104,51 @@
         filter 0.25s ease;
 }
 
-.skill-icons svg:hover {
-    transform: translateY(-5px) scale(1.15);
+.skill-icon:hover svg {
+    transform: translateY(-6px) scale(1.15);
+
+    filter: drop-shadow(
+        0 8px 10px rgba(255, 255, 255, 0.25)
+    );
+}
+
+.skill-icon::after {
+    content: attr(data-tooltip);
+
+    position: absolute;
+
+    top: -2.2rem;
+    left: 50%;
+
+    transform: translateX(-50%) translateY(-5px);
+
+    padding: 0.35rem 0.65rem;
+
+    white-space: nowrap;
+
+    font-size: 0.75rem;
+
+    color: white;
+    background: #222;
+
+    border: 1px solid #444;
+    border-radius: 6px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.skill-icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateX(-50%) translateY(0);
 }
 
 .language-item {
