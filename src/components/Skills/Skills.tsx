@@ -77,19 +77,19 @@ function Skills() {
 
                     <div className="skill-icons">
                         <SkillIcon name="Linux">
-                            <SiLinux />
+                            <SiLinux color="grey"/>
                         </SkillIcon>
 
                         <SkillIcon name="NixOS">
-                            <SiNixos />
+                            <SiNixos color="cyan"/>
                         </SkillIcon>
 
                         <SkillIcon name="Ubuntu">
-                            <SiUbuntu />
+                            <SiUbuntu color="orange"/>
                         </SkillIcon>
 
                         <SkillIcon name="Windows">
-                            <FaWindows />
+                            <FaWindows color="blue"/>
                         </SkillIcon>
                     </div>
                 </motion.div>
@@ -107,47 +107,47 @@ function Skills() {
 
                     <div className="skill-icons">
                         <SkillIcon name="Python">
-                            <SiPython />
+                            <SiPython color="yellow"/>
                         </SkillIcon>
 
                         <SkillIcon name="C">
-                            <SiC />
+                            <SiC color="blue"/>
                         </SkillIcon>
 
                         <SkillIcon name="C++">
-                            <SiCplusplus />
+                            <SiCplusplus color="blue"/>
                         </SkillIcon>
 
                         <SkillIcon name="C#">
-                            <TbBrandCSharp />
+                            <TbBrandCSharp color="purple"/>
                         </SkillIcon>
 
                         <SkillIcon name="Rust">
-                            <SiRust />
+                            <SiRust color="orange"/>
                         </SkillIcon>
 
                         <SkillIcon name="Java">
-                            <FaJava />
+                            <FaJava color="blue"/>
                         </SkillIcon>
 
                         <SkillIcon name="JavaScript">
-                            <SiJavascript />
+                            <SiJavascript color="yellow"/>
                         </SkillIcon>
 
                         <SkillIcon name="TypeScript">
-                            <SiTypescript />
+                            <SiTypescript color="blue"/>
                         </SkillIcon>
 
                         <SkillIcon name="HTML">
-                            <FaHtml5 />
+                            <FaHtml5 color="orange"/>
                         </SkillIcon>
 
                         <SkillIcon name="Ocaml">
-                            <SiOcaml />
+                            <SiOcaml color="orange"/>
                         </SkillIcon>
 
                         <SkillIcon name="Bash">
-                            <SiGnubash />
+                            <SiGnubash color="grey"/>
                         </SkillIcon>
                     </div>
                 </motion.div>
@@ -165,7 +165,7 @@ function Skills() {
 
                     <div className="skill-icons">
                         <SkillIcon name="Git">
-                            <SiGit />
+                            <SiGit color="orange"/>
                         </SkillIcon>
 
                         <SkillIcon name="GitHub">
@@ -173,39 +173,39 @@ function Skills() {
                         </SkillIcon>
 
                         <SkillIcon name="Gitlab">
-                            <SiGitlab />
+                            <SiGitlab color="orange"/>
                         </SkillIcon>
 
                         <SkillIcon name="Docker">
-                            <SiDocker />
+                            <SiDocker color="blue"/>
                         </SkillIcon>
 
                         <SkillIcon name="MySQL">
-                            <SiMysql />
+                            <SiMysql color="blue"/>
                         </SkillIcon>
 
                         <SkillIcon name="PostgreSQL">
-                            <SiPostgresql />
+                            <SiPostgresql color="blue"/>
                         </SkillIcon>
 
                         <SkillIcon name="LaTeX">
-                            <SiLatex />
+                            <SiLatex color="cyan"/>
                         </SkillIcon>
 
                         <SkillIcon name="Numpy">
-                            <SiNumpy />
+                            <SiNumpy color="cyan"/>
                         </SkillIcon>
 
                         <SkillIcon name="Pandas">
-                            <SiPandas />
+                            <SiPandas color="blue"/>
                         </SkillIcon>
 
                         <SkillIcon name="React">
-                            <SiReact />
+                            <SiReact color="cyan"/>
                         </SkillIcon>
 
                         <SkillIcon name="VScode">
-                            <VscVscode />
+                            <VscVscode color="blue"/>
                         </SkillIcon>
 
                         <SkillIcon name="Rider">
@@ -221,7 +221,7 @@ function Skills() {
                         </SkillIcon>
 
                         <SkillIcon name="Unity">
-                            <SiUnity />
+                            <SiUnity color="grey"/>
                         </SkillIcon>
                     </div>
                 </motion.div>
