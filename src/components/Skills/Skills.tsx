@@ -29,16 +29,31 @@ import {
 import { TbBrandCSharp } from "react-icons/tb";
 import { FaJava, FaWindows, FaHtml5 } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
+
+import { motion } from "framer-motion";
 import "./Skills.css";
 
 function Skills() {
     return (
-        <section id="skills" className="skills">
+        <motion.section
+            id="skills"
+            className="skills"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+        >
             <h2>Skills</h2>
 
             <div className="skills-grid">
 
-                <div className="skill-card">
+                <motion.div
+                    className="skill-card"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                >
                     <h3>Operating Systems</h3>
 
                     <div className="skill-icons">
@@ -47,9 +62,15 @@ function Skills() {
                         <SiUbuntu title="Ubuntu" />
                         <FaWindows title="Windows" />
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="skill-card">
+                <motion.div
+                    className="skill-card"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                >
                     <h3>Programming Languages</h3>
 
                     <div className="skill-icons">
@@ -65,9 +86,15 @@ function Skills() {
                         <SiOcaml title="Ocaml" />
                         <SiGnubash title="Bash" />
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="skill-card">
+                <motion.div
+                    className="skill-card"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                >
                     <h3>Tools & Technologies</h3>
 
                     <div className="skill-icons">
@@ -87,9 +114,15 @@ function Skills() {
                         <SiIntellijidea title="IntellijIdea" />
                         <SiUnity title="Unity" />
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="skill-card">
+                <motion.div
+                    className="skill-card"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                >
                     <h3>Languages</h3>
 
                     <div className="skill-icons">
@@ -105,10 +138,10 @@ function Skills() {
                             <span className="language-level">C1 - TOIEC (960/990)</span>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
             </div>
-        </section>
+        </motion.section>
     );
 }
 
