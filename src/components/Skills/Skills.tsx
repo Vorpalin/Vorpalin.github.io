@@ -9,8 +9,10 @@ import {
     SiOcaml,
     SiJavascript,
     SiTypescript,
+    SiGnubash,
     SiPostgresql,
     SiMysql,
+    SiLatex,
     SiGit,
     SiGitlab,
     SiDocker,
@@ -18,10 +20,15 @@ import {
     SiGithub,
     SiNumpy,
     SiPandas,
+    SiRider,
+    SiPycharm,
+    SiIntellijidea,
+    SiUnity,
 } from "react-icons/si";
 
 import { TbBrandCSharp } from "react-icons/tb";
 import { FaJava, FaWindows, FaHtml5 } from "react-icons/fa";
+import { VscVscode } from "react-icons/vsc";
 import "./Skills.css";
 
 function Skills() {
@@ -56,6 +63,7 @@ function Skills() {
                         <SiTypescript title="TypeScript" />
                         <FaHtml5 title="HTML" />
                         <SiOcaml title="Ocaml" />
+                        <SiGnubash title="Bash" />
                     </div>
                 </div>
 
@@ -69,9 +77,15 @@ function Skills() {
                         <SiDocker title="Docker" />
                         <SiMysql title="MySQL" />
                         <SiPostgresql title="PostgreSQL" />
+                        <SiLatex title="LaTeX" />
                         <SiNumpy title="Numpy" />
                         <SiPandas title="Pandas" />
                         <SiReact title="React" />
+                        <VscVscode title="VScode" />
+                        <SiRider title="Rider" />
+                        <SiPycharm title="Pycharm" />
+                        <SiIntellijidea title="IntellijIdea" />
+                        <SiUnity title="Unity" />
                     </div>
                 </div>
 
