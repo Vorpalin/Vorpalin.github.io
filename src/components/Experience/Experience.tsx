@@ -9,7 +9,9 @@ function Experience() {
     >
       {/* Section Title */}
       <div className="text-center mb-12 sm:mb-16">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white">EXPERIENCE</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          EXPERIENCE
+        </h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
         <p className="text-gray-400 mt-4 text-base sm:text-lg font-semibold">
           A collection of my work experience and the roles I have taken in

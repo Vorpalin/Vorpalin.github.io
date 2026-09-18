@@ -1,5 +1,5 @@
 @property --fill {
-  syntax: '<percentage>';
+  syntax: "<percentage>";
   inherits: true;
   initial-value: 0%;
 }
@@ -26,16 +26,13 @@ btn-social:hover {
 btn-social::after {
   position: absolute;
   z-index: -1;
-  content: '';
+  content: "";
   inset: -3px;
   border-radius: inherit;
 
-  background: conic-gradient
-    ( greenyellow var(--fill),
-    transparent var(--fill));
+  background: conic-gradient (greenyellow var(--fill), transparent var(--fill));
   transition: --fill 0.6s ease-in-out;
 }
-
 
 .circular-button {
   width: 60px;
@@ -47,79 +44,86 @@ btn-social::after {
 body {
   height: 100vh;
   display: flex;
-  flex-direction: column;      /* Stack elements vertically */
-  justify-content: center;     /* Center vertically */
-  align-items: center;         /* Center horizontally */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
   font-family: Arial, sans-serif;
   padding-top: 70px; /* Adjust depending on nav height */
   text-align: center;
   padding: 2rem;
   background-color: #121212; /* Dark background */
-  color: #f5f5f5;             /* Light text */
+  color: #f5f5f5; /* Light text */
   margin: 0;
 }
 
 .title {
-	font-family: 'Poppins', sans-serif;
-	font-size: 30px;
-	
-	text-align: center;
-	background: linear-gradient(to right,
-			#fc72ff, #8f68ff, #487bff, 
-			#8f68ff, #fc72ff);
-	background-size: 200%;
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	animation: animate-gradient 2.5s linear
-		infinite;
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    #fc72ff,
+    #8f68ff,
+    #487bff,
+    #8f68ff,
+    #fc72ff
+  );
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
 }
 
-@keyframes animate-gradient{
-	to {
-		background-position: 200%;
-	}
+@keyframes animate-gradient {
+  to {
+    background-position: 200%;
+  }
 }
 
 .card {
-	width: 190px;
-	height: 254px;
-	background: #07182E;
-	position: relative;
-	display: flex;
-	place-content: center;
-	place-items: center;
-	overflow: hidden;
-	border-radius: 20px;
+  width: 190px;
+  height: 254px;
+  background: #07182e;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 .card::before {
-	content: '';
-	position: absolute;
-	width: 100px;
-	background-image: linear-gradient(180deg,
-		rgb(0,183, 255), rgb(255, 48, 255));
-	height:130%;
-	animation: rotBGimg 3s linear infinite;
-	transition: all 0.2s linear;
-}	
+  content: "";
+  position: absolute;
+  width: 100px;
+  background-image: linear-gradient(
+    180deg,
+    rgb(0, 183, 255),
+    rgb(255, 48, 255)
+  );
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
 
 @keyframes rotBGimg {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .card::after {
-	content: "";
-	position: absolute;
-	background: #07182E;
-	inset: 5px;
-	border-radius: 15px;
-	z-index: 1;
+  content: "";
+  position: absolute;
+  background: #07182e;
+  inset: 5px;
+  border-radius: 15px;
+  z-index: 1;
 }
 
 .card-img {
@@ -136,7 +140,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #07182E;
+  background-color: #07182e;
   padding: 1rem 2rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   z-index: 1000;
@@ -179,8 +183,8 @@ body {
 #home {
   display: flex;
   flex-direction: column;
-  align-items: center;      /* Center horizontally */
-  justify-content: center;  /* Optional: vertical centering if you give a height */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Optional: vertical centering if you give a height */
   text-align: center;
   padding: 3rem 1rem;
   max-width: 800px;
@@ -188,60 +192,64 @@ body {
 }
 
 p {
-	font-family: 'Poppins', sans-serif;
-	font-size: 15px;
-	
-	text-align: center;
-	background: linear-gradient(to right,
-			#fc72ff, #8f68ff, #487bff, 
-			#8f68ff, #fc72ff);
-	background-size: 200%;
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	animation: animate-gradient 2.5s linear
-		infite;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    #fc72ff,
+    #8f68ff,
+    #487bff,
+    #8f68ff,
+    #fc72ff
+  );
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infite;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 :root {
-    --background: #0a0a0a;
-    --surface: #111111;
-    --surface-hover: #181818;
+  --background: #0a0a0a;
+  --surface: #111111;
+  --surface-hover: #181818;
 
-    --text: #f5f5f5;
-    --text-secondary: #a0a0a0;
+  --text: #f5f5f5;
+  --text-secondary: #a0a0a0;
 
-    --border: #2a2a2a;
-    --border-hover: #555555;
+  --border: #2a2a2a;
+  --border-hover: #555555;
 
-    --accent: #ffffff;
+  --accent: #ffffff;
 }
 
 [data-theme="light"] {
-    --background: #f5f5f5;
-    --surface: #ffffff;
-    --surface-hover: #eeeeee;
+  --background: #f5f5f5;
+  --surface: #ffffff;
+  --surface-hover: #eeeeee;
 
-    --text: #111111;
-    --text-secondary: #666666;
+  --text: #111111;
+  --text-secondary: #666666;
 
-    --border: #dddddd;
-    --border-hover: #aaaaaa;
+  --border: #dddddd;
+  --border-hover: #aaaaaa;
 
-    --accent: #111111;
+  --accent: #111111;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 
-    background: var(--background);
-    color: var(--text);
+  background: var(--background);
+  color: var(--text);
 
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }

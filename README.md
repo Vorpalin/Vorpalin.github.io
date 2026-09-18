@@ -5,7 +5,7 @@ For now, the website’s design is quite minimalist, but I plan to evolve it by 
 
 # 📦 Technologies
 
-* Vite
-* React.js
-* Typescript
-* CSS
+- Vite
+- React.js
+- Typescript
+- CSS
