@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { Sun, Moon } from "lucide-react";
-import "./Navbar.css";
+import React, { useState, useEffect } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 interface NavLink {
   id: string;
@@ -8,96 +8,148 @@ interface NavLink {
 }
 
 const LINKS: NavLink[] = [
-  { id: "home", label: "Home" },
   { id: "about", label: "About" },
-  { id: "education", label: "Education" },
-  { id: "experiences", label: "Experiences" },
+  { id: "skills", label: "Skills" },
+  { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
-  { id: "contact", label: "Contact" },
+  { id: "education", label: "Education" },
 ];
 
 function Navbar() {
-  const [theme, setTheme] = useState<"dark" | "light">(() => {
-        const savedTheme = localStorage.getItem("theme");
+    const [isOpen, setIsOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("");
+    const [isScrolled, setIsScrolled] = useState(false);
 
-        return savedTheme === "light" ? "light" : "dark";
-    });
+    // check scroll and change navbar background
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        }
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
-  useEffect(() => {
-        document.documentElement.setAttribute("data-theme", theme);
-        localStorage.setItem("theme", theme);
-    }, [theme]);
+    // scroll function
+    const handleMenuItemClick = (sectionId) => {
+        setActiveSection(sectionId);
+        setIsOpen(false);
 
-  const toggleTheme = () => {
-        setTheme((currentTheme) =>
-            currentTheme === "dark" ? "light" : "dark"
-        );
-    };
-  const [active, setActive] = useState("home");
-  const [menuOpen, setMenuOpen] = useState(false);
+        const section = document.getElementById(sectionId);
 
-  useEffect(() => {
-    const sections = LINKS
-      .map((l) => document.getElementById(l.id))
-      .filter((el): el is HTMLElement => el !== null);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: "-40% 0px -55% 0px" }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
-
-  const renderLink = (link: NavLink) => {
-    const isActive = active === link.id;
     return (
-      <a
-        key={link.id}
-        href={`#${link.id}`}
-        className={isActive ? "active" : ""}
-        onClick={() => setMenuOpen(false)}
-      >
-        {link.label}
-      </a>
+        <nav 
+            className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] lg:px-[12vw] ${
+                isScrolled ? "bg-[#050414]/50 backdrop-blur-md shadow-md" : "bg-transparent"
+            }`}
+        >
+            <div className="text-white py-5 flex justify-between gap-8">
+                {/* Logo */}
+                <div className="text-lg font-semibold cursor-pointer shrink-0 whitespace-nowrap">
+                    <span className="text-[#8245ec]">&lt;</span>
+                    <span className="text-white">Alexis</span>
+                    <span className="text-[#8245ec]">/</span>
+                    <span className="text-white">Mialon</span>
+                    <span className="text-[#8245ec]">&gt;</span>
+                </div>
+
+                {/* Desktop Menu */}
+                <ul className="hidden md:flex space-x-6 lg:space-x-8 text-gray-300 whitespace-nowrap">
+                    {LINKS.map((link) => (
+                        <li 
+                            key={link.id} 
+                            className={`cursor-pointer hover:text-[#8245ec] ${
+                            activeSection === link.id ? "text-[#8245ec]" : ""
+                        }`}>
+                            <button onClick={() => handleMenuItemClick(link.id)}>
+                                {link.label}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+
+                {/* Social Media */}
+                <div className="hidden md:flex space-x-4 shrink-0">
+                    {/* Github */}
+                    <a 
+                        href="https://github.com/Vorpalin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-300 hover:text-[#8245ec]"
+                    >
+                        <FaGithub size={24}/>
+                    </a>
+
+                    {/* Linkedin */}
+                    <a 
+                        href="https://www.linkedin.com/in/alexis-mialon-79117b329/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-300 hover:text-[#8245ec]"
+                    >
+                        <FaLinkedin size={24}/>
+                    </a>
+                </div>
+
+                {/* Mobile Menu Icons */}
+                <div className="md:hidden">
+                     {isOpen ? (
+                        <FiX
+                            className="text-3xl text-[#8245ec] cursor-pointer"
+                            onClick={() => setIsOpen(false)}
+                        />
+                    ) : (
+                        <FiMenu
+                            className="text-3xl text-[#8245ec] cursor-pointer"
+                            onClick={() => setIsOpen(true)}
+                        />
+                    )}
+                </div>
+            </div>
+
+            {/* Mobile Menu Item */}
+            {isOpen && (
+                <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-[#050414]/50 backdrop-filter backdrop-blur-lg z-50 rounded-lg shadow-lg md:hidden">
+                    <ul className="flex flex-col items-center space-y-4 py-4 text-gray-300">
+                        {LINKS.map((link) => (
+                            <li key={link.id} className={`cursor-pointer hover:text-white
+                            ${activeSection === link.id ? "text-[#8245ec]" : ""}`}>
+                                <button onClick={() => handleMenuItemClick(link.id)}>
+                                    {link.label}
+                                </button>
+                            </li>
+                        ))}
+
+                        <div className="flex space-x-4">
+                            {/* Github */}
+                            <a 
+                                href="https://github.com/Vorpalin"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-300 hover:text-white"
+                            >
+                                <FaGithub size={24}/>
+                            </a>
+
+                            {/* Linkedin */}
+                            <a 
+                                href="https://www.linkedin.com/in/alexis-mialon-79117b329/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-300 hover:text-white"
+                            >
+                                <FaLinkedin size={24}/>
+                            </a>
+                        </div>
+                    </ul>
+                </div>
+            )}
+        </nav>
     );
-  };
-
-  return (
-    <nav className="navbar">
-      <div className="navbar-logo">Alexis MIALON</div>
-
-      <button
-        className="navbar-burger"
-        onClick={() => setMenuOpen((o) => !o)}
-        aria-label="Toggle menu"
-      >
-        <span />
-        <span />
-        <span />
-      </button>
-
-      <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
-        {LINKS.map(renderLink)}
-      </div>
-
-      <button
-        className="theme-toggle"
-        onClick={toggleTheme}
-        aria-label="Toggle theme"
-      >
-
-        {theme === "dark" ? <Sun /> : <Moon />}
-      </button>
-    </nav>
-  );
 }
 
 export default Navbar;

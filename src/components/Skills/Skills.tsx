@@ -1,259 +1,62 @@
-import {
-    SiLinux,
-    SiNixos,
-    SiUbuntu,
-    SiPython,
-    SiC,
-    SiCplusplus,
-    SiRust,
-    SiOcaml,
-    SiJavascript,
-    SiTypescript,
-    SiGnubash,
-    SiPostgresql,
-    SiMysql,
-    SiLatex,
-    SiGit,
-    SiGitlab,
-    SiDocker,
-    SiReact,
-    SiGithub,
-    SiNumpy,
-    SiPandas,
-    SiRider,
-    SiPycharm,
-    SiIntellijidea,
-    SiUnity,
-} from "react-icons/si";
-
-import { TbBrandCSharp } from "react-icons/tb";
-import { FaJava, FaWindows, FaHtml5 } from "react-icons/fa";
-import { VscVscode } from "react-icons/vsc";
-
-import { motion } from "framer-motion";
-import "./Skills.css";
-
-type SkillIconProps = {
-    name: string;
-    children: React.ReactNode;
-};
-
-function SkillIcon({ name, children }: SkillIconProps) {
-    return (
-        <div
-            className="skill-icon"
-            data-tooltip={name}
-        >
-            {children}
-        </div>
-    );
-}
+import React from "react";
+import { SkillsInfo } from "../../constants";
+import TiltCard from "../TiltCard/TiltCard"
 
 
 function Skills() {
     return (
-        <motion.section
+        <section
             id="skills"
-            className="skills"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6 }}
+            className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[20vw] font-sans bg-skills-gradient clip-path-custom"
         >
-            <h2>Skills</h2>
-
-            <div className="skills-grid">
-
-                <motion.div
-                    className="skill-card"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                >
-                    <h3>Operating Systems</h3>
-
-                    <br />
-
-                    <div className="skill-icons">
-                        <SkillIcon name="Linux">
-                            <SiLinux />
-                        </SkillIcon>
-
-                        <SkillIcon name="NixOS">
-                            <SiNixos />
-                        </SkillIcon>
-
-                        <SkillIcon name="Ubuntu">
-                            <SiUbuntu />
-                        </SkillIcon>
-
-                        <SkillIcon name="Windows">
-                            <FaWindows />
-                        </SkillIcon>
-                    </div>
-                </motion.div>
-
-                <motion.div
-                    className="skill-card"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                    <h3>Programming Languages</h3>
-
-                    <br />
-
-                    <div className="skill-icons">
-                        <SkillIcon name="Python">
-                            <SiPython />
-                        </SkillIcon>
-
-                        <SkillIcon name="C">
-                            <SiC />
-                        </SkillIcon>
-
-                        <SkillIcon name="C++">
-                            <SiCplusplus />
-                        </SkillIcon>
-
-                        <SkillIcon name="C#">
-                            <TbBrandCSharp />
-                        </SkillIcon>
-
-                        <SkillIcon name="Rust">
-                            <SiRust />
-                        </SkillIcon>
-
-                        <SkillIcon name="Java">
-                            <FaJava />
-                        </SkillIcon>
-
-                        <SkillIcon name="JavaScript">
-                            <SiJavascript />
-                        </SkillIcon>
-
-                        <SkillIcon name="TypeScript">
-                            <SiTypescript />
-                        </SkillIcon>
-
-                        <SkillIcon name="HTML">
-                            <FaHtml5 />
-                        </SkillIcon>
-
-                        <SkillIcon name="Ocaml">
-                            <SiOcaml />
-                        </SkillIcon>
-
-                        <SkillIcon name="Bash">
-                            <SiGnubash />
-                        </SkillIcon>
-                    </div>
-                </motion.div>
-
-                <motion.div
-                    className="skill-card"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                >
-                    <h3>Tools & Technologies</h3>
-
-                    <br />
-
-                    <div className="skill-icons">
-                        <SkillIcon name="Git">
-                            <SiGit />
-                        </SkillIcon>
-
-                        <SkillIcon name="GitHub">
-                            <SiGithub />
-                        </SkillIcon>
-
-                        <SkillIcon name="Gitlab">
-                            <SiGitlab />
-                        </SkillIcon>
-
-                        <SkillIcon name="Docker">
-                            <SiDocker />
-                        </SkillIcon>
-
-                        <SkillIcon name="MySQL">
-                            <SiMysql />
-                        </SkillIcon>
-
-                        <SkillIcon name="PostgreSQL">
-                            <SiPostgresql />
-                        </SkillIcon>
-
-                        <SkillIcon name="LaTeX">
-                            <SiLatex />
-                        </SkillIcon>
-
-                        <SkillIcon name="Numpy">
-                            <SiNumpy />
-                        </SkillIcon>
-
-                        <SkillIcon name="Pandas">
-                            <SiPandas />
-                        </SkillIcon>
-
-                        <SkillIcon name="React">
-                            <SiReact />
-                        </SkillIcon>
-
-                        <SkillIcon name="VScode">
-                            <VscVscode />
-                        </SkillIcon>
-
-                        <SkillIcon name="Rider">
-                            <SiRider />
-                        </SkillIcon>
-
-                        <SkillIcon name="Pycharm">
-                            <SiPycharm />
-                        </SkillIcon>
-
-                        <SkillIcon name="IntellijIdea">
-                            <SiIntellijidea />
-                        </SkillIcon>
-
-                        <SkillIcon name="Unity">
-                            <SiUnity />
-                        </SkillIcon>
-                    </div>
-                </motion.div>
-
-                <motion.div
-                    className="skill-card"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                >
-                    <h3>Languages</h3>
-
-                    <br />
-
-                    <div className="skill-icons">
-                        <div className="language-item">
-                            <span className="language-icon">🇫🇷</span>
-                            <span className="language-name">French</span>
-                            <span className="language-level">Native</span>
-                        </div>
-
-                        <div className="language-item">
-                            <span className="language-icon">🇬🇧</span>
-                            <span className="language-name">English</span>
-                            <span className="language-level">C1 - TOIEC (960/990)</span>
-                        </div>
-                    </div>
-                </motion.div>
-
+            {/* Section Title */}
+            <div className="text-center mb-8">
+                <h2 className="text-3xl sm:text-4xl font-bold text-white">SKILLS</h2>
+                    <div className="w-24 h-1 bg-[#8245ec] mx-auto mt-2"></div>
+                    <p className="text-gray-400 mt-4 text-lg font-semibold">
+                    A collection of my technical skills and expertise honed through various projects and experiences
+                    </p>
             </div>
-        </motion.section>
+
+            {/* Skill Categories */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 py-10">
+            {SkillsInfo.map((category) => (
+                <div
+                key={category.title}
+                className="min-w-0 bg-gray-900/60 backdrop-blur-md px-4 sm:px-8 py-6 rounded-2xl border border-white/30
+                            shadow-[0_0_20px_1px_rgba(130,69,236,0.3)]"
+                >
+                    <h3 className="text-2xl sm:text-3xl font-semibold text-gray-400 mb-4 text-center">
+                        {category.title}
+                    </h3>
+
+                    {/* Skill Items */}
+                    <TiltCard className="w-full">
+                    <div
+                        className="grid grid-cols-3 gap-2 sm:gap-3 w-full"
+                        style={{ containerType: "inline-size" }}
+                    >
+                        {category.skills.map((skill) => (
+                        <div
+                            key={skill.name}
+                            className="flex min-w-0 flex-col items-center justify-center gap-1.5 bg-transparent border-2 border-gray-700 rounded-2xl sm:rounded-3xl py-3 px-1 text-center"
+                        >
+                            <img
+                            src={skill.logo}
+                            alt={`${skill.name} logo`}
+                            className="w-6 h-6 sm:w-8 sm:h-8 shrink-0"
+                            />
+                            <span className="whitespace-nowrap text-gray-300 text-[clamp(0.55rem,3cqw,0.875rem)]">
+                            {skill.name}
+                            </span>
+                        </div>
+                        ))}
+                    </div>
+                    </TiltCard>
+                </div>
+            ))}
+            </div>
+        </section>
     );
 }
 
