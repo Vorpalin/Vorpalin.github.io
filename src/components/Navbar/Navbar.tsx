@@ -15,6 +15,7 @@ const LINKS: NavLink[] = [
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   { id: "education", label: "Education" },
+  { id: "contact", label: "Contact" },
 ];
 
 function Navbar() {

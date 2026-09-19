@@ -1,4 +1,4 @@
-import { FaLinkedin, FaInstagram, FaDiscord } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaDiscord } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 function Footer() {
   // Smooth scroll function
@@ -23,6 +23,7 @@ function Footer() {
             { name: "Experience", id: "experience" },
             { name: "Projects", id: "projects" },
             { name: "Education", id: "education" },
+            { name: "Contact", id: "contact" },
           ].map((item, index) => (
             <button
               key={index}
@@ -38,6 +39,7 @@ function Footer() {
         <div className="mt-6 flex flex-wrap justify-center space-x-4">
           {[
             { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/alexis-mialon-79117b329/" },
+            { icon: <FaGithub />, link: "https://github.com/Vorpalin" },
             { icon: <FaDiscord />, link: "https://www.discord.com/users/alexis0206/" },
             { icon: <FaInstagram />, link: "https://www.instagram.com/mialonalexis/" },
             { icon: <FaXTwitter />, link: "https://x.com/MialonAlex454/" },

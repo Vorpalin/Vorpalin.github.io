@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { projects } from "../../constants";
+import Reveal from "../Reveal/Reveal";
 
 interface ModalLinkProps {
   href?: string | null;
@@ -85,39 +86,41 @@ function Projects() {
       {/* Projects Grid */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:gap-10 xl:grid-cols-3">
         {(projects as Project[]).map((project) => (
-          <div
-            key={project.id}
-            onClick={() => handleOpenModal(project)}
-            className="flex min-w-0 cursor-pointer flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-lg backdrop-blur-md transition duration-300 hover:shadow-purple-500/50 sm:hover:-translate-y-2"
-          >
-            <div className="p-3 sm:p-4">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="h-40 w-full rounded-xl object-cover sm:h-48"
-              />
-            </div>
+          <Reveal delay={(project.id + 1) * 100}>
+            <div
+              key={project.id}
+              onClick={() => handleOpenModal(project)}
+              className="flex min-w-0 cursor-pointer flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-lg backdrop-blur-md transition duration-300 hover:shadow-purple-500/50 sm:hover:-translate-y-2"
+            >
+              <div className="p-3 sm:p-4">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-40 w-full rounded-xl object-cover sm:h-48"
+                />
+              </div>
 
-            <div className="flex flex-1 flex-col p-4 pt-0 sm:p-6 sm:pt-0">
-              <h3 className="mb-2 text-xl font-bold break-words text-content sm:text-2xl">
-                {project.title}
-              </h3>
-              <p className="mb-4 line-clamp-3 text-sm text-muted sm:text-base">
-                {project.description}
-              </p>
-              {/* mt-auto : les tags restent alignés en bas, cartes de même hauteur */}
-              <div className="mt-auto flex flex-wrap gap-2">
-                {project.tags.map((tag, index) => (
-                  <span
-                    key={index}
-                    className="rounded-full bg-purple-100 px-2 py-1 text-xs font-semibold text-purple-700 dark:bg-[#251f38] dark:text-purple-400"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="flex flex-1 flex-col p-4 pt-0 sm:p-6 sm:pt-0">
+                <h3 className="mb-2 text-xl font-bold break-words text-content sm:text-2xl">
+                  {project.title}
+                </h3>
+                <p className="mb-4 line-clamp-3 text-sm text-muted sm:text-base">
+                  {project.description}
+                </p>
+                {/* mt-auto : les tags restent alignés en bas, cartes de même hauteur */}
+                <div className="mt-auto flex flex-wrap gap-2">
+                  {project.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="rounded-full bg-purple-100 px-2 py-1 text-xs font-semibold text-purple-700 dark:bg-[#251f38] dark:text-purple-400"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
 

@@ -8,6 +8,7 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import BlurBlob from "./components/BlurBlob/BlurBlob";
 import DotsBackground from "./components/DotsBackground/DotsBackground";
+import Aurora from "./components/Aurora/Aurora";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] bg-[size:14px_24px]"></div>
 
       <DotsBackground />
+      <Aurora />
 
       <div className="relative pt-20">
         <Navbar />
