@@ -111,7 +111,7 @@ function DotsBackground({ count = 70, maxSpeed = 0.5, linkDistance = 130 }: Dots
 
     init();
     if (reduceMotion) {
-      draw(); // image fixe si l'utilisateur préfère moins d'animations
+      draw();
     } else {
       loop();
     }

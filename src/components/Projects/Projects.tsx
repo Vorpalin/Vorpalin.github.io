@@ -12,7 +12,6 @@ function ModalLink({ href, label, variant }: ModalLinkProps) {
   const base =
     "flex-1 px-4 py-2 rounded-xl text-sm sm:text-base lg:text-xl font-semibold text-center";
 
-  // Lien absent, vide ou "#" : bouton désactivé
   if (!href || href.trim() === "" || href === "#") {
     return (
       <span
@@ -38,7 +37,7 @@ function ModalLink({ href, label, variant }: ModalLinkProps) {
 }
 
 interface Project {
-  id: number | string;
+  id: number;
   title: string;
   description: string;
   image: string;

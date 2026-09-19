@@ -12,7 +12,7 @@ function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: number }
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          observer.disconnect(); // une seule fois
+          observer.disconnect();
         }
       },
       { threshold: 0.15 }
