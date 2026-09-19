@@ -37,15 +37,22 @@ html {
 @theme {
   --animate-blob: blob 8s infinite;
   @keyframes blob {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.15); }
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
   }
 }
 
 body {
   background-color: var(--page);
   color: var(--content);
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 /* Custom utilities */

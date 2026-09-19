@@ -6,47 +6,46 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[20vw] font-sans bg-skills-gradient clip-path-custom"
+      className="px-[12vw] py-24 pb-24 font-sans bg-skills-gradient clip-path-custom md:px-[7vw] lg:px-[20vw]"
     >
       {/* Section Title */}
-      <div className="text-center mb-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-content">SKILLS</h2>
-        <div className="w-24 h-1 bg-[#8245ec] mx-auto mt-2"></div>
-        <p className="text-muted mt-4 text-lg font-semibold">
-          A collection of my technical skills and expertise honed through
-          various projects and experiences
+      <div className="mb-8 text-center">
+        <h2 className="text-3xl font-bold text-content sm:text-4xl">SKILLS</h2>
+        <div className="mx-auto mt-2 h-1 w-24 bg-[#8245ec]"></div>
+        <p className="mt-4 text-lg font-semibold text-muted">
+          A collection of my technical skills and expertise honed through various projects and
+          experiences
         </p>
       </div>
 
       {/* Skill Categories */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 py-10">
+      <div className="grid grid-cols-1 gap-6 py-10 lg:grid-cols-2 lg:gap-8">
         {SkillsInfo.map((category) => (
           <div
             key={category.title}
-            className="min-w-0 bg-surface/60 backdrop-blur-md px-4 sm:px-8 py-6 rounded-2xl border border-line
-                            shadow-[0_0_20px_1px_rgba(130,69,236,0.3)]"
+            className="min-w-0 rounded-2xl border border-line bg-surface/60 px-4 py-6 shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] backdrop-blur-md sm:px-8"
           >
-            <h3 className="text-2xl sm:text-3xl font-semibold text-muted mb-4 text-center">
+            <h3 className="mb-4 text-center text-2xl font-semibold text-muted sm:text-3xl">
               {category.title}
             </h3>
 
             {/* Skill Items */}
             <TiltCard className="w-full">
               <div
-                className="grid grid-cols-3 gap-2 sm:gap-3 w-full"
+                className="grid w-full grid-cols-3 gap-2 sm:gap-3"
                 style={{ containerType: "inline-size" }}
               >
                 {category.skills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="flex min-w-0 flex-col items-center justify-center gap-1.5 bg-transparent border-2 border-line rounded-2xl sm:rounded-3xl py-3 px-1 text-center"
+                    className="flex min-w-0 flex-col items-center justify-center gap-1.5 rounded-2xl border-2 border-line bg-transparent px-1 py-3 text-center sm:rounded-3xl"
                   >
                     <img
                       src={skill.logo}
                       alt={`${skill.name} logo`}
-                      className="w-6 h-6 sm:w-8 sm:h-8 shrink-0"
+                      className="h-6 w-6 shrink-0 sm:h-8 sm:w-8"
                     />
-                    <span className="whitespace-nowrap text-content text-[clamp(0.55rem,3cqw,0.875rem)]">
+                    <span className="text-[clamp(0.55rem,3cqw,0.875rem)] whitespace-nowrap text-content">
                       {skill.name}
                     </span>
                   </div>

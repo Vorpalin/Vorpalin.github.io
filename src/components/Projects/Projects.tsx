@@ -17,7 +17,7 @@ function ModalLink({ href, label, variant }: ModalLinkProps) {
       <span
         aria-disabled="true"
         title="Not available"
-        className={`${base} bg-content/5 text-muted/50 cursor-not-allowed select-none`}
+        className={`${base} cursor-not-allowed bg-content/5 text-muted/50 select-none`}
       >
         {label}
       </span>
@@ -30,12 +30,7 @@ function ModalLink({ href, label, variant }: ModalLinkProps) {
       : "bg-content/10 text-muted hover:bg-purple-800 hover:text-white";
 
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`${base} ${colors}`}
-    >
+    <a href={href} target="_blank" rel="noopener noreferrer" className={`${base} ${colors}`}>
       {label}
     </a>
   );
@@ -51,14 +46,12 @@ interface Project {
   webapp?: string | null;
 }
 
-function Projects()
-{
+function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const handleOpenModal = (project: Project) => setSelectedProject(project);
   const handleCloseModal = () => setSelectedProject(null);
 
-  // Ferme avec Échap et bloque le scroll de la page quand la modale est ouverte
   useEffect(() => {
     if (!selectedProject) return;
 
@@ -77,39 +70,39 @@ function Projects()
   return (
     <section
       id="projects"
-      className="relative py-16 sm:py-24 px-5 sm:px-[7vw] lg:px-[12vw] font-sans"
+      className="relative px-5 py-16 font-sans sm:px-[7vw] sm:py-24 lg:px-[12vw]"
     >
       {/* Section Title */}
-      <div className="text-center mb-12 sm:mb-16">
-        <h2 className="text-3xl sm:text-4xl font-bold text-content">PROJECTS</h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-muted mt-4 text-base sm:text-lg font-semibold">
-          A showcase of the projects I have worked on, highlighting my skills
-          and experience in various technologies
+      <div className="mb-12 text-center sm:mb-16">
+        <h2 className="text-3xl font-bold text-content sm:text-4xl">PROJECTS</h2>
+        <div className="mx-auto mt-4 h-1 w-32 bg-purple-500"></div>
+        <p className="mt-4 text-base font-semibold text-muted sm:text-lg">
+          A showcase of the projects I have worked on, highlighting my skills and experience in
+          various technologies
         </p>
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:gap-10 xl:grid-cols-3">
         {(projects as Project[]).map((project) => (
           <div
             key={project.id}
             onClick={() => handleOpenModal(project)}
-            className="flex min-w-0 flex-col border border-line bg-surface backdrop-blur-md rounded-2xl shadow-lg overflow-hidden cursor-pointer transition duration-300 sm:hover:-translate-y-2 hover:shadow-purple-500/50"
+            className="flex min-w-0 cursor-pointer flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-lg backdrop-blur-md transition duration-300 hover:shadow-purple-500/50 sm:hover:-translate-y-2"
           >
             <div className="p-3 sm:p-4">
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-40 sm:h-48 object-cover rounded-xl"
+                className="h-40 w-full rounded-xl object-cover sm:h-48"
               />
             </div>
 
-            <div className="flex flex-1 flex-col p-4 sm:p-6 pt-0 sm:pt-0">
-              <h3 className="text-xl sm:text-2xl font-bold text-content mb-2 break-words">
+            <div className="flex flex-1 flex-col p-4 pt-0 sm:p-6 sm:pt-0">
+              <h3 className="mb-2 text-xl font-bold break-words text-content sm:text-2xl">
                 {project.title}
               </h3>
-              <p className="text-muted mb-4 text-sm sm:text-base line-clamp-3">
+              <p className="mb-4 line-clamp-3 text-sm text-muted sm:text-base">
                 {project.description}
               </p>
               {/* mt-auto : les tags restent alignés en bas, cartes de même hauteur */}
@@ -117,7 +110,7 @@ function Projects()
                 {project.tags.map((tag, index) => (
                   <span
                     key={index}
-                    className="bg-purple-100 text-purple-700 dark:bg-[#251f38] dark:text-purple-400 text-xs font-semibold rounded-full px-2 py-1"
+                    className="rounded-full bg-purple-100 px-2 py-1 text-xs font-semibold text-purple-700 dark:bg-[#251f38] dark:text-purple-400"
                   >
                     {tag}
                   </span>
@@ -135,52 +128,52 @@ function Projects()
           onClick={handleCloseModal}
         >
           <div
-            className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-surface rounded-xl shadow-2xl"
+            className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-xl bg-surface shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Bouton fermer : reste visible pendant le scroll de la modale */}
-            <div className="sticky top-0 z-10 flex justify-end bg-surface/90 backdrop-blur px-4 py-2">
+            <div className="sticky top-0 z-10 flex justify-end bg-surface/90 px-4 py-2 backdrop-blur">
               <button
                 onClick={handleCloseModal}
                 aria-label="Close"
-                className="text-content text-3xl font-bold leading-none hover:text-purple-500"
+                className="text-3xl leading-none font-bold text-content hover:text-purple-500"
               >
                 &times;
               </button>
             </div>
 
             <div className="flex flex-col">
-              <div className="w-full flex justify-center px-4">
+              <div className="flex w-full justify-center px-4">
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
-                  className="w-full max-h-[40vh] sm:max-h-[50vh] object-contain rounded-xl shadow-2xl"
+                  className="max-h-[40vh] w-full rounded-xl object-contain shadow-2xl sm:max-h-[50vh]"
                 />
               </div>
 
               <div className="p-4 sm:p-6 lg:p-8">
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-content mb-3 sm:mb-4 break-words">
+                <h3 className="mb-3 text-xl font-bold break-words text-content sm:mb-4 sm:text-2xl lg:text-3xl">
                   {selectedProject.title}
                 </h3>
-                <p className="text-muted mb-4 sm:mb-6 text-sm lg:text-base">
+                <p className="mb-4 text-sm text-muted sm:mb-6 lg:text-base">
                   {selectedProject.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
+                <div className="mb-4 flex flex-wrap gap-2 sm:mb-6">
                   {selectedProject.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="bg-purple-100 text-purple-700 dark:bg-[#251f38] dark:text-purple-400 text-xs font-semibold rounded-full px-2 py-1"
+                      className="rounded-full bg-purple-100 px-2 py-1 text-xs font-semibold text-purple-700 dark:bg-[#251f38] dark:text-purple-400"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <ModalLink href={selectedProject.github} label="View Code" variant="secondary" />
-                <ModalLink href={selectedProject.webapp} label="View Live" variant="primary" />
-              </div>
+                <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+                  <ModalLink href={selectedProject.github} label="View Code" variant="secondary" />
+                  <ModalLink href={selectedProject.webapp} label="View Live" variant="primary" />
+                </div>
               </div>
             </div>
           </div>

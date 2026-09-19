@@ -1,12 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function Contact()
-{
+function Contact() {
   const form = useRef<HTMLFormElement>(null);
-  const [isSent, setIsSent] = useState(false);
 
   const toastOptions = () => ({
     position: "top-right" as const,
@@ -19,22 +17,19 @@ function Contact()
   });
 
   const sendEmail = (e) => {
+    if (!form.current) return;
 
-    if (!form.current) 
-      return;
-    
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_q87irvb",
-        "template_fi84jv9",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        "P7mmxUcTXCp6fa_X4"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
-          setIsSent(true);
           form.current.reset(); // Reset form fields after sending
           toast.success("Message sent successfully! ✅", toastOptions());
         },
@@ -48,23 +43,23 @@ function Contact()
   return (
     <section
       id="contact"
-      className="flex flex-col items-center justify-center py-24 px-5 sm:px-[7vw] lg:px-[12vw]"
+      className="flex flex-col items-center justify-center px-5 py-24 sm:px-[7vw] lg:px-[12vw]"
     >
       {/* Toast Container */}
       <ToastContainer />
 
       {/* Section Title */}
-      <div className="text-center mb-16">
+      <div className="mb-16 text-center">
         <h2 className="text-4xl font-bold text-content">CONTACT</h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-muted mt-4 text-lg font-semibold">
+        <div className="mx-auto mt-4 h-1 w-32 bg-purple-500"></div>
+        <p className="mt-4 text-lg font-semibold text-muted">
           I’d love to hear from you—reach out for any opportunities or questions!
         </p>
       </div>
 
       {/* Contact Form */}
-      <div className="mt-8 w-full max-w-md bg-surface p-6 rounded-lg shadow-lg border border-line">
-        <h3 className="text-xl font-semibold text-content text-center">
+      <div className="mt-8 w-full max-w-md rounded-lg border border-line bg-surface p-6 shadow-lg">
+        <h3 className="text-center text-xl font-semibold text-content">
           Connect With Me <span className="ml-1">🚀</span>
         </h3>
 
@@ -74,34 +69,34 @@ function Contact()
             name="user_email"
             placeholder="Your Email"
             required
-            className="w-full p-3 rounded-md bg-page text-content placeholder:text-muted border border-line focus:outline-none focus:border-purple-500"
+            className="w-full rounded-md border border-line bg-page p-3 text-content placeholder:text-muted focus:border-purple-500 focus:outline-none"
           />
           <input
             type="text"
             name="user_name"
             placeholder="Your Name"
             required
-            className="w-full p-3 rounded-md bg-page text-content placeholder:text-muted border border-line focus:outline-none focus:border-purple-500"
+            className="w-full rounded-md border border-line bg-page p-3 text-content placeholder:text-muted focus:border-purple-500 focus:outline-none"
           />
           <input
             type="text"
             name="subject"
             placeholder="Subject"
             required
-            className="w-full p-3 rounded-md bg-page text-content placeholder:text-muted border border-line focus:outline-none focus:border-purple-500"
+            className="w-full rounded-md border border-line bg-page p-3 text-content placeholder:text-muted focus:border-purple-500 focus:outline-none"
           />
           <textarea
             name="message"
             placeholder="Message"
             rows={4}
             required
-            className="w-full p-3 rounded-md bg-page text-content placeholder:text-muted border border-line focus:outline-none focus:border-purple-500"
+            className="w-full rounded-md border border-line bg-page p-3 text-content placeholder:text-muted focus:border-purple-500 focus:outline-none"
           />
-          
+
           {/* Send Button */}
           <button
             type="submit"
-            className="w-full bg-linear-to-r from-purple-600 to-pink-500 py-3 text-content font-semibold rounded-md hover:opacity-90 transition"
+            className="w-full rounded-md bg-linear-to-r from-purple-600 to-pink-500 py-3 font-semibold text-content transition hover:opacity-90"
           >
             Send
           </button>

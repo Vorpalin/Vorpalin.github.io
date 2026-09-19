@@ -21,7 +21,7 @@ function BlurBlob({ position, size }: BlurBlobProps) {
         transform: "translate(-50%, -50%)",
       }}
     >
-      <div className="w-full h-full bg-purple-500/15 dark:bg-purple-500/20 rounded-full blur-3xl animate-blob"></div>
+      <div className="h-full w-full animate-blob rounded-full bg-purple-500/15 blur-3xl dark:bg-purple-500/20"></div>
     </div>
   );
 }

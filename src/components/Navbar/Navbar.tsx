@@ -45,15 +45,13 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] lg:px-[12vw] ${
-        isScrolled
-          ? "bg-page/80 backdrop-blur-md shadow-md"
-          : "bg-transparent"
+      className={`fixed top-0 z-50 w-full px-[7vw] transition duration-300 lg:px-[12vw] ${
+        isScrolled ? "bg-page/80 shadow-md backdrop-blur-md" : "bg-transparent"
       }`}
     >
-      <div className="text-content py-5 flex justify-between gap-8">
+      <div className="flex justify-between gap-8 py-5 text-content">
         {/* Logo */}
-        <div className="text-lg font-semibold cursor-pointer shrink-0 whitespace-nowrap">
+        <div className="shrink-0 cursor-pointer text-lg font-semibold whitespace-nowrap">
           <span className="text-[#8245ec]">&lt;</span>
           <span className="text-content">Alexis</span>
           <span className="text-[#8245ec]">/</span>
@@ -62,7 +60,7 @@ function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 lg:space-x-8 text-muted whitespace-nowrap">
+        <ul className="hidden space-x-6 whitespace-nowrap text-muted md:flex lg:space-x-8">
           {LINKS.map((link) => (
             <li
               key={link.id}
@@ -70,15 +68,13 @@ function Navbar() {
                 activeSection === link.id ? "text-[#8245ec]" : ""
               }`}
             >
-              <button onClick={() => handleMenuItemClick(link.id)}>
-                {link.label}
-              </button>
+              <button onClick={() => handleMenuItemClick(link.id)}>{link.label}</button>
             </li>
           ))}
         </ul>
 
         {/* Social Media */}
-        <div className="hidden md:flex space-x-4 shrink-0">
+        <div className="hidden shrink-0 space-x-4 md:flex">
           {/* Github */}
           <a
             href="https://github.com/Vorpalin"
@@ -107,12 +103,12 @@ function Navbar() {
         <div className="md:hidden">
           {isOpen ? (
             <FiX
-              className="text-3xl text-[#8245ec] cursor-pointer"
+              className="cursor-pointer text-3xl text-[#8245ec]"
               onClick={() => setIsOpen(false)}
             />
           ) : (
             <FiMenu
-              className="text-3xl text-[#8245ec] cursor-pointer"
+              className="cursor-pointer text-3xl text-[#8245ec]"
               onClick={() => setIsOpen(true)}
             />
           )}
@@ -121,17 +117,14 @@ function Navbar() {
 
       {/* Mobile Menu Item */}
       {isOpen && (
-        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-page/90 backdrop-blur-lg z-50 rounded-lg shadow-lg md:hidden">
+        <div className="absolute top-16 left-1/2 z-50 w-4/5 -translate-x-1/2 transform rounded-lg bg-page/90 shadow-lg backdrop-blur-lg md:hidden">
           <ul className="flex flex-col items-center space-y-4 py-4 text-muted">
             {LINKS.map((link) => (
               <li
                 key={link.id}
-                className={`cursor-pointer hover:text-content
-                            ${activeSection === link.id ? "text-[#8245ec]" : ""}`}
+                className={`cursor-pointer hover:text-content ${activeSection === link.id ? "text-[#8245ec]" : ""}`}
               >
-                <button onClick={() => handleMenuItemClick(link.id)}>
-                  {link.label}
-                </button>
+                <button onClick={() => handleMenuItemClick(link.id)}>{link.label}</button>
               </li>
             ))}
 

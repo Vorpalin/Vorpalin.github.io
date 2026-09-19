@@ -5,78 +5,71 @@ function Experience() {
   return (
     <section
       id="experience"
-      className="py-16 sm:py-24 px-5 sm:px-[7vw] lg:px-[12vw] font-sans bg-skills-gradient clip-path-custom-2"
+      className="px-5 py-16 font-sans bg-skills-gradient clip-path-custom-2 sm:px-[7vw] sm:py-24 lg:px-[12vw]"
     >
       {/* Section Title */}
-      <div className="text-center mb-12 sm:mb-16">
-        <h2 className="text-3xl sm:text-4xl font-bold text-content">
-          EXPERIENCE
-        </h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-muted mt-4 text-base sm:text-lg font-semibold">
-          A collection of my work experience and the roles I have taken in
-          various organizations
+      <div className="mb-12 text-center sm:mb-16">
+        <h2 className="text-3xl font-bold text-content sm:text-4xl">EXPERIENCE</h2>
+        <div className="mx-auto mt-4 h-1 w-32 bg-purple-500"></div>
+        <p className="mt-4 text-base font-semibold text-muted sm:text-lg">
+          A collection of my work experience and the roles I have taken in various organizations
         </p>
       </div>
 
       {/* Experience Timeline */}
       <div className="relative">
         {/* Vertical line */}
-        <div className="absolute top-0 left-5 sm:left-1/2 h-full w-1 -translate-x-1/2 bg-content/40" />
+        <div className="absolute top-0 left-5 h-full w-1 -translate-x-1/2 bg-content/40 sm:left-1/2" />
 
         {experiences.map((experience, index) => (
           <div
             key={experience.id}
-            className={`relative flex pl-14 sm:pl-0 mb-10 sm:mb-16 last:mb-0 ${
+            className={`relative mb-10 flex pl-14 last:mb-0 sm:mb-16 sm:pl-0 ${
               index % 2 === 0 ? "sm:justify-end" : "sm:justify-start"
             }`}
           >
             {/* Timeline Circle */}
-            <div className="absolute left-5 sm:left-1/2 top-4 sm:top-6 -translate-x-1/2 z-10 w-10 h-10 sm:w-14 sm:h-14 rounded-full border-4 border-[#8245ec] bg-gray-400 overflow-hidden">
+            <div className="absolute top-4 left-5 z-10 h-10 w-10 -translate-x-1/2 overflow-hidden rounded-full border-4 border-[#8245ec] bg-gray-400 sm:top-6 sm:left-1/2 sm:h-14 sm:w-14">
               <img
                 src={experience.img}
                 alt={experience.company}
-                className="w-full h-full object-cover"
+                className="h-full w-full object-cover"
               />
             </div>
 
             {/* Card */}
-            <div className="min-w-0 w-full sm:w-[calc(50%-2.5rem)] p-4 sm:p-6 rounded-2xl border border-line bg-surface backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] transition-transform duration-300 sm:hover:scale-[1.03]">
+            <div className="w-full min-w-0 rounded-2xl border border-line bg-surface p-4 shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] backdrop-blur-md transition-transform duration-300 sm:w-[calc(50%-2.5rem)] sm:p-6 sm:hover:scale-[1.03]">
               <div className="flex items-center gap-4 sm:gap-6">
                 {/* Company logo */}
-                <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 bg-content/40 rounded-md overflow-hidden">
+                <div className="h-14 w-14 shrink-0 overflow-hidden rounded-md bg-content/40 sm:h-16 sm:w-16">
                   <img
                     src={experience.img}
                     alt={experience.company}
-                    className="w-full h-full object-cover"
+                    className="h-full w-full object-cover"
                   />
                 </div>
 
                 {/* Role, company, date */}
-                <div className="min-w-0 flex flex-col">
-                  <h3 className="text-lg sm:text-xl font-semibold text-content break-words">
+                <div className="flex min-w-0 flex-col">
+                  <h3 className="text-lg font-semibold break-words text-content sm:text-xl">
                     {experience.role}
                   </h3>
-                  <h4 className="text-sm sm:text-base text-muted break-words">
+                  <h4 className="text-sm break-words text-muted sm:text-base">
                     {experience.company}
                   </h4>
-                  <p className="text-xs sm:text-sm text-muted mt-1">
-                    {experience.date}
-                  </p>
+                  <p className="mt-1 text-xs text-muted sm:text-sm">{experience.date}</p>
                 </div>
               </div>
 
-              <p className="mt-4 text-sm sm:text-base text-muted">
-                {experience.desc}
-              </p>
+              <p className="mt-4 text-sm text-muted sm:text-base">{experience.desc}</p>
 
               <div className="mt-4">
                 <h5 className="font-medium text-content">Skills:</h5>
-                <ul className="flex flex-wrap gap-2 mt-2">
+                <ul className="mt-2 flex flex-wrap gap-2">
                   {experience.skills.map((skill, i) => (
                     <li
                       key={i}
-                      className="bg-[#8245ec] text-white px-3 py-1 text-xs sm:text-sm rounded-lg border border-gray-400"
+                      className="rounded-lg border border-gray-400 bg-[#8245ec] px-3 py-1 text-xs text-white sm:text-sm"
                     >
                       {skill}
                     </li>
