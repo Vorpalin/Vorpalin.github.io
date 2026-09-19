@@ -96,4 +96,11 @@ src/
 
 ---
 
+## 🙏 Credits
+
+- Original design and structure inspired by [codingmastr/Tarun-s-Portfolio](https://github.com/codingmastr/Tarun-s-Portfolio/)
+- Icons by [React Icons](https://react-icons.github.io/react-icons/)
+- Contact form powered by [EmailJS](https://www.emailjs.com/)
+- Badges by [Shields.io](https://shields.io/)
+
 <div align="center">Made with 💜 by Alexis Mialon</div>
