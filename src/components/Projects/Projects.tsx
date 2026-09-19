@@ -170,7 +170,7 @@ function Projects()
                   {selectedProject.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="bg-[#251f38] text-xs font-semibold text-purple-500 rounded-full px-2 py-1"
+                      className="bg-purple-100 text-purple-700 dark:bg-[#251f38] dark:text-purple-400 text-xs font-semibold rounded-full px-2 py-1"
                     >
                       {tag}
                     </span>
