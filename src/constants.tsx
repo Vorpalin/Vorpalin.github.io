@@ -18,6 +18,10 @@ import githubLogo from "./assets/tech_logo/github.png";
 import vscodeLogo from "./assets/tech_logo/vscode.png";
 import postgreLogo from "./assets/tech_logo/postgre.png";
 import csharpLogo from "./assets/tech_logo/csharp.png";
+import dockerLogo from "./assets/tech_logo/docker.png";
+import gitlabLogo from "./assets/tech_logo/gitlab.png";
+import unityLogo from "./assets/tech_logo/unity.png";
+import quarkusLogo from "./assets/tech_logo/quarkus.png";
 
 // Experience Section Logo's
 import opensee from "./assets/company_logo/opensee.jpg";
@@ -28,6 +32,12 @@ import supbiotech from "./assets/company_logo/supbiotech.jpg";
 
 import epita from "./assets/education_logo/epita.jpg";
 import centria from "./assets/education_logo/centria.png";
+
+// Projects Section Logo's
+import monster_binder from "./assets/project_logo/monster_binder.jpg"
+import portfolio_website from "./assets/project_logo/portfolio_website.png"
+import simucorp from "./assets/project_logo/simucorp.jpg"
+import emulator_collections from "./assets/project_logo/emulator_collections.png"
 
 export const SkillsInfo = [
   {
@@ -43,10 +53,11 @@ export const SkillsInfo = [
   {
     title: "Backend",
     skills: [
-      { name: "Node JS", logo: nodejsLogo },
-      { name: "Express JS", logo: expressjsLogo },
       { name: "MySQL", logo: mysqlLogo },
       { name: "PostgreSQL", logo: postgreLogo },
+      { name: "Quarkus", logo: quarkusLogo },
+      { name: "Node JS", logo: nodejsLogo },
+      { name: "Express JS", logo: expressjsLogo },
     ],
   },
   {
@@ -66,7 +77,10 @@ export const SkillsInfo = [
     skills: [
       { name: "Git", logo: gitLogo },
       { name: "GitHub", logo: githubLogo },
+      { name: "GitLab", logo: gitlabLogo },
       { name: "VS Code", logo: vscodeLogo },
+      { name: "Docker", logo: dockerLogo },
+      { name: "Unity", logo: unityLogo },
     ],
   },
 ];
@@ -121,7 +135,7 @@ export const education = [
     degree: "Engineering degree",
   },
   {
-    id: 0,
+    id: 1,
     img: centria,
     school: "Centria, Kokkola",
     date: "Jan 2025 - May 2025",
@@ -130,3 +144,46 @@ export const education = [
     degree: "Exchange Student",
   },
 ];
+
+  export const projects = [
+    {
+      id: 0,
+      title: "Porfolio website",
+      description:
+        "This portfolio website",
+      image: portfolio_website,
+      tags: ["HTML", "CSS", "TypeScript", "React JS"],
+      github: "https://github.com/Vorpalin/Vorpalin.github.io",
+      webapp: "https://vorpalin.github.io/",
+    },
+    {
+      id: 1,
+      title: "Emulator collections",
+      description:
+        "A collection of emulator written in C++",
+      image: emulator_collections,
+      tags: ["C++", "SDL"],
+      github: "https://github.com/Vorpalin/emulators-collection",
+      webapp: null, 
+    },
+    {
+      id: 2,
+      title: "Interactive monster binder",
+      description:
+        "An application developed in Python and SQL that allows users to create custom monsters and search for them by name, characteristics, or even a photo.",
+      image: monster_binder,
+      tags: ["Python", "MySQL", "Tensorflow"],
+      github: "https://github.com/Vorpalin/Pokedex",
+      webapp: null, 
+    },
+    {
+      id: 3,
+      title: "Simucorp",
+      description:
+        "2D local business management game developed with Unity",
+      image: simucorp,
+      tags: ["C#", "Unity"],
+      github: "https://github.com/SimuCorp/SIMUCORP",
+      webapp: null, 
+    },
+  ];
