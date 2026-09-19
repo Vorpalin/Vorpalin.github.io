@@ -1,27 +1,34 @@
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./components/Home/Home";
+import Skills from "./components/Skills/Skills";
 import About from "./components/About/About";
 import Education from "./components/Education/Education";
-import Experiences from "./components/Experiences/Experiences";
+import Experience from "./components/Experience/Experience";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-import "./App.css";
+import BlurBlob from "./components/BlurBlob/BlurBlob";
+import DotsBackground from "./components/DotsBackground/DotsBackground";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <Home />
+    <div className="bg-page">
+      <BlurBlob position={{ top: "35%", left: "20%" }} size={{ width: "30%", height: "40%" }} />
+
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] bg-[size:14px_24px]"></div>
+
+      <DotsBackground />
+
+      <div className="relative pt-20">
+        <Navbar />
         <About />
-        <Education />
-        <Experiences />
+        <Skills />
+        <Experience />
         <Projects />
+        <Education />
         <Contact />
         <Footer />
-      </main>
-    </>
+      </div>
+    </div>
   );
 }
 
