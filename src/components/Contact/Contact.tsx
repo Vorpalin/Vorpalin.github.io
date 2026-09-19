@@ -97,7 +97,7 @@ function Contact() {
           {/* Send Button */}
           <button
             type="submit"
-            className="w-full rounded-md bg-linear-to-r from-purple-600 to-pink-500 py-3 font-semibold text-white transition hover:opacity-90"
+            className="focus-visible w-full rounded-md bg-linear-to-r from-purple-600 to-pink-500 py-3 font-semibold text-white transition hover:opacity-90"
           >
             Send
           </button>

@@ -68,7 +68,9 @@ function Navbar() {
                 activeSection === link.id ? "text-[#8245ec]" : ""
               }`}
             >
-              <button onClick={() => handleMenuItemClick(link.id)}>{link.label}</button>
+              <button onClick={() => handleMenuItemClick(link.id)} className="focus-visible">
+                {link.label}
+              </button>
             </li>
           ))}
         </ul>
@@ -124,7 +126,9 @@ function Navbar() {
                 key={link.id}
                 className={`cursor-pointer hover:text-content ${activeSection === link.id ? "text-[#8245ec]" : ""}`}
               >
-                <button onClick={() => handleMenuItemClick(link.id)}>{link.label}</button>
+                <button onClick={() => handleMenuItemClick(link.id)} className="focus-visible">
+                  {link.label}
+                </button>
               </li>
             ))}
 

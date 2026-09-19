@@ -136,7 +136,7 @@ function Projects() {
               <button
                 onClick={handleCloseModal}
                 aria-label="Close"
-                className="text-3xl leading-none font-bold text-content hover:text-purple-500"
+                className="focus-visible text-3xl leading-none font-bold text-content hover:text-purple-500"
               >
                 &times;
               </button>

@@ -21,7 +21,7 @@ function ThemeToggle() {
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-      className="text-muted transition-colors hover:text-[#8245ec]"
+      className="focus-visible text-muted transition-colors hover:text-[#8245ec]"
     >
       {theme === "dark" ? <FiSun size={22} /> : <FiMoon size={22} />}
     </button>

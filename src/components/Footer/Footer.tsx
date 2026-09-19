@@ -27,7 +27,7 @@ function Footer() {
             <button
               key={index}
               onClick={() => handleScroll(item.id)}
-              className="my-1 text-sm hover:text-purple-500 sm:text-base"
+              className="focus-visible my-1 text-sm hover:text-purple-500 sm:text-base"
             >
               {item.name}
             </button>
