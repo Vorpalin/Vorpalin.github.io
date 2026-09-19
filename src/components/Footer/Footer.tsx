@@ -1,9 +1,8 @@
-import React from "react";
 import { FaLinkedin, FaInstagram, FaDiscord } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 function Footer() {
   // Smooth scroll function
-  const handleScroll = (sectionId) => {
+  const handleScroll = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });

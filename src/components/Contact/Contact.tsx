@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
+import type { FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -16,7 +17,7 @@ function Contact() {
     theme: document.documentElement.classList.contains("dark") ? "dark" : "light",
   });
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     if (!form.current) return;
 
     e.preventDefault();
@@ -30,7 +31,7 @@ function Contact() {
       )
       .then(
         () => {
-          form.current.reset(); // Reset form fields after sending
+          form.current?.reset(); // Reset form fields after sending
           toast.success("Message sent successfully! ✅", toastOptions());
         },
         (error) => {

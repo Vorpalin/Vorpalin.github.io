@@ -1,4 +1,3 @@
-import React from "react";
 import { education } from "../../constants";
 
 function Education() {

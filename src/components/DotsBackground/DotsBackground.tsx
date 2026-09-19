@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 interface Dot {
   x: number;
@@ -9,9 +9,9 @@ interface Dot {
 }
 
 interface DotsBackgroundProps {
-  count?: number; // nombre de points pour un écran 1440x900
-  maxSpeed?: number; // vitesse max (px par frame)
-  linkDistance?: number; // distance max pour relier deux points (0 = pas de lignes)
+  count?: number;
+  maxSpeed?: number;
+  linkDistance?: number;
 }
 
 function DotsBackground({ count = 70, maxSpeed = 0.5, linkDistance = 130 }: DotsBackgroundProps) {

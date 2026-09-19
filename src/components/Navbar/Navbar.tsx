@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -32,7 +32,7 @@ function Navbar() {
   }, []);
 
   // scroll function
-  const handleMenuItemClick = (sectionId) => {
+  const handleMenuItemClick = (sectionId: string) => {
     setActiveSection(sectionId);
     setIsOpen(false);
 

@@ -1,4 +1,3 @@
-import React from "react";
 import TiltCard from "../TiltCard/TiltCard";
 import { TypeAnimation } from "react-type-animation";
 import { FiDownload } from "react-icons/fi";

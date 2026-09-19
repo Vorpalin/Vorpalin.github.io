@@ -1,4 +1,3 @@
-import React from "react";
 import { SkillsInfo } from "../../constants";
 import TiltCard from "../TiltCard/TiltCard";
 

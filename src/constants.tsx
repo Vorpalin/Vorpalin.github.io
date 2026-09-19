@@ -113,7 +113,7 @@ export const experiences = [
     skills: ["Python", "C", "OCaml"],
   },
   {
-    id: 2,
+    id: 3,
     img: supbiotech,
     role: "Teaching Assistant",
     company: "Supbiotech",
