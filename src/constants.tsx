@@ -24,7 +24,7 @@ import quarkusLogo from "./assets/tech_logo/quarkus.png";
 
 // Experience Section Logo's
 import opensee from "./assets/company_logo/opensee.jpg";
-import lre from "./assets/company_logo/lre.png";
+import lre from "./assets/company_logo/lre.jpg";
 import supbiotech from "./assets/company_logo/supbiotech.jpg";
 
 // Education Section Logo's

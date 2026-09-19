@@ -54,14 +54,6 @@ npm install
 npm run dev
 ```
 
-Other scripts:
-
-```bash
-npm run build     # production build
-npm run preview   # preview the build locally
-npm run format    # format the code with Prettier
-```
-
 ## 🔐 Environment variables
 
 Create a `.env` file at the root for the contact form:
@@ -78,7 +70,7 @@ VITE_EMAILJS_PUBLIC_KEY=your_public_key
 src/
 ├── assets/         # images and logos
 ├── components/     # About, Skills, Experience, Projects, ...
-├── constants.tsx      # data (skills, projects, experiences, education)
+├── constants.tsx   # data (skills, projects, experiences, education)
 ├── App.tsx
 └── index.css       # Tailwind config and theme tokens
 ```
@@ -94,13 +86,13 @@ src/
 **Alexis Mialon**
 [LinkedIn](https://www.linkedin.com/in/alexis-mialon-79117b329/) · [GitHub](https://github.com/Vorpalin)
 
----
-
 ## 🙏 Credits
 
 - Original design and structure inspired by [codingmastr/Tarun-s-Portfolio](https://github.com/codingmastr/Tarun-s-Portfolio/)
 - Icons by [React Icons](https://react-icons.github.io/react-icons/)
 - Contact form powered by [EmailJS](https://www.emailjs.com/)
 - Badges by [Shields.io](https://shields.io/)
+
+---
 
 <div align="center">Made with 💜 by Alexis Mialon</div>
