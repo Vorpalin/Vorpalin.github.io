@@ -1,6 +1,7 @@
 import React from "react";
 import TiltCard from "../TiltCard/TiltCard";
 import { TypeAnimation } from "react-type-animation";
+import { FiDownload } from "react-icons/fi";
 
 import profilImage from "../../assets/photo_linkedin.jpg";
 
@@ -14,16 +15,16 @@ function About() {
         {/* Left Side */}
         <div className="md:w-1/2 text-center md:text-left mt-8 md:mt-0">
           {/* Greeting */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-content mb-2 leading-tight">
             Hi, I am
           </h1>
           {/* Name */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-content mb-4 leading-tight">
             Alexis Mialon
           </h2>
           {/* Skills Heading with Typing Effect */}
           <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-[#8245ec] leading-tight">
-            <span className="text-white">I am a </span>
+            <span className="text-content">I am a </span>
 
             <TypeAnimation
               sequence={[
@@ -49,17 +50,14 @@ function About() {
           </p>
           {/* Resume Button */}
           <a
-            href="https://drive.google.com/file/d/11cDM1qf6D0JXbi40v5TdotnzI_02pNUz/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold transition duration-300 transform hover:scale-105"
-            style={{
-              background: "linear-gradient(90deg, #8245ec, #a855f7)",
-              boxShadow: "0 0 2px #8245ec, 0 0 2px #8245ec, 0 0 40px #8245ec",
-            }}
-          >
-            DOWNLOAD CV
-          </a>
+              href={`${import.meta.env.BASE_URL}CV_Alexis_MIALON.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-4 px-6 py-3 rounded-full bg-linear-to-r from-purple-600 to-pink-500 text-white font-semibold hover:opacity-90 transition"
+            >
+              <FiDownload />
+              Download CV
+            </a>
         </div>
 
         {/* Right Side */}

@@ -12,7 +12,7 @@ function Footer()
   };
 
   return (
-    <footer className="text-white py-8 px-[12vw] md:px-[7vw] lg:px-[20vw]">
+    <footer className="text-content py-8 px-5 sm:px-[7vw] lg:px-[12vw]">
       <div className="container mx-auto text-center">
         {/* Name / Logo */}
         <h2 className="text-xl font-semibold text-purple-500">Alexis Mialon</h2>
@@ -58,7 +58,7 @@ function Footer()
         </div>
 
         {/* Copyright Text */}
-        <p className="text-sm text-gray-400 mt-6">
+        <p className="text-sm text-muted mt-6">
           © {new Date().getFullYear()} Alexis Mialon. All rights reserved.
         </p>
       </div>
