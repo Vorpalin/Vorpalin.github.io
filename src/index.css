@@ -57,14 +57,36 @@ body {
 
 /* Custom utilities */
 @utility clip-path-custom {
-  clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 95%, 0 100%);
+  --cut: clamp(2rem, 6vw, 5rem);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--cut) * 0.4),
+    75% calc(100% - var(--cut)),
+    0 100%
+  );
 }
 @utility clip-path-custom-2 {
-  clip-path: polygon(0 0, 100% 0, 100% 98%, 25% 95%, 0 100%);
+  --cut: clamp(2rem, 6vw, 5rem);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--cut) * 0.4),
+    25% calc(100% - var(--cut)),
+    0 100%
+  );
 }
 @utility clip-path-custom-3 {
-  clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 96%, 0 100%);
+  --cut: clamp(2rem, 6vw, 5rem);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--cut) * 0.4),
+    75% calc(100% - var(--cut) * 0.8),
+    0 100%
+  );
 }
+
 @utility bg-skills-gradient {
   background:
     linear-gradient(38.73deg, rgba(204, 0, 187, 0.15) 0%, rgba(201, 32, 184, 0) 50%),

@@ -4,7 +4,7 @@ function Education() {
   return (
     <section
       id="education"
-      className="px-5 py-16 font-sans bg-skills-gradient clip-path-custom-3 sm:px-[7vw] sm:py-24 lg:px-[12vw]"
+      className="py-16 sm:py-24 pb-[calc(4rem+var(--cut))] sm:pb-[calc(6rem+var(--cut))] px-5 sm:px-[7vw] lg:px-[12vw] font-sans bg-skills-gradient clip-path-custom-2"
     >
       {/* Section Title */}
       <div className="mb-12 text-center sm:mb-16">
