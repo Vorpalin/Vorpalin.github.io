@@ -29,7 +29,7 @@ function About() {
             />
           </h3>
 
-          <p className="mt-6 mb-8 text-base leading-relaxed text-gray-400 sm:text-lg">
+          <p className="mt-6 mb-8 text-base leading-relaxed text-muted sm:text-lg">
             Research student pursuing a Computer Science Engineering degree at EPITA. Passionate
             about computer science and artificial intelligence in particular, I am eager to learn
             and apply my skills to real-world projects.
