@@ -22,7 +22,7 @@ function Experience() {
         <div className="absolute top-0 left-5 h-full w-1 -translate-x-1/2 bg-content/40 sm:left-1/2" />
 
         {experiences.map((experience, index) => (
-          <Reveal delay={(experience.id + 1) * 100}>
+          <Reveal key={experience.id} delay={(experience.id + 1) * 100}>
             <div
               key={experience.id}
               className={`relative mb-10 flex pl-14 last:mb-0 sm:mb-16 sm:pl-0 ${

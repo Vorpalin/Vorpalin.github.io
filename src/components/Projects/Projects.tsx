@@ -85,7 +85,7 @@ function Projects() {
       {/* Projects Grid */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:gap-10 xl:grid-cols-3">
         {(projects as Project[]).map((project) => (
-          <Reveal delay={(project.id + 1) * 100}>
+          <Reveal key={project.id} delay={(project.id + 1) * 100}>
             <div
               key={project.id}
               onClick={() => handleOpenModal(project)}

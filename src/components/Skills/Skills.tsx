@@ -21,7 +21,7 @@ function Skills() {
       {/* Skill Categories */}
       <div className="grid grid-cols-1 gap-6 py-10 lg:grid-cols-2 lg:gap-8">
         {SkillsInfo.map((category, index) => (
-          <Reveal delay={(index + 1) * 100}>
+          <Reveal key={category.title} delay={(index + 1) * 100}>
             <div
               key={category.title}
               className="min-w-0 rounded-2xl border border-line bg-surface/60 px-4 py-6 shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] backdrop-blur-md sm:px-8"

@@ -23,7 +23,7 @@ function Education() {
         <div className="absolute top-0 left-5 h-full w-1 -translate-x-1/2 bg-content/40 sm:left-1/2" />
 
         {education.map((edu, index) => (
-          <Reveal delay={(edu.id + 1) * 100}>
+          <Reveal key={edu.id} delay={(edu.id + 1) * 100}>
             <div
               key={edu.id}
               className={`relative mb-10 flex pl-14 last:mb-0 sm:mb-16 sm:pl-0 ${
