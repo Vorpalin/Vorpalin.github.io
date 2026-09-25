@@ -23,7 +23,7 @@ concurrency:
 jobs:
   build:
     name: Build & checks
-    runs-on: ubuntu-25.10
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout
@@ -57,7 +57,7 @@ jobs:
     if: github.event_name != 'pull_request'
     needs: build
 
-    runs-on: ubuntu-25.10
+    runs-on: ubuntu-24.04
 
     environment:
       name: github-pages
@@ -73,7 +73,7 @@ jobs:
     if: github.event_name != 'pull_request'
     needs: deploy
 
-    runs-on: ubuntu-25.10
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Wait for GitHub Pages
