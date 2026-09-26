@@ -27,10 +27,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
         with:
           node-version: 24
           cache: npm
@@ -48,7 +50,7 @@ jobs:
         run: npm run build
 
       - name: Upload build artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
         with:
           path: ./dist
 
@@ -66,7 +68,7 @@ jobs:
     steps:
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346
 
   lighthouse:
     name: Lighthouse audit
@@ -92,7 +94,7 @@ jobs:
           exit 1
 
       - name: Run Lighthouse CI
-        uses: treosh/lighthouse-ci-action@v12
+        uses: treosh/lighthouse-ci-action@3e7e23fb74242897f95c0ba9cabad3d0227b9b18
         with:
           urls: |
             https://vorpalin.github.io/
