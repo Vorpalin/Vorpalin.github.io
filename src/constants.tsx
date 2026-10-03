@@ -161,7 +161,7 @@ export const projects = [
     image: emulator_collections,
     tags: ["C++", "SDL"],
     github: "https://github.com/Vorpalin/emulators-collection",
-    webapp: null,
+    webapp: "https://vorpalin.github.io/emulators-collection",
   },
   {
     id: 2,
