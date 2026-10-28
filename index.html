@@ -3,32 +3,113 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Alexis Mialon | AI & Research Student</title>
     <meta
       name="description"
-      content="Portfolio of Alexis Mialon, AI and research student and developer."
+      content="Portfolio of Alexis Mialon, EPITA engineering student, AI intern and researcher in differential cryptanalysis. Projects, experience and CV."
     />
-    <meta property="og:title" content="Alexis Mialon | Portfolio" />
-    <meta property="og:description" content="AI student, researcher and developer." />
-    <meta property="og:image" content="https://vorpalin.github.io/og-image.png" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="author" content="Alexis Mialon" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://vorpalin.github.io/" />
+
+    <!-- Theme: applied before first paint to avoid a flash of the wrong theme -->
+    <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#050414" />
-    <title>Alexis Mialon | AI & Research Student</title>
-    <link rel="icon" type="image/png" href="/photo_linkedin.png">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
     <script>
       (function () {
         try {
           var saved = localStorage.getItem("theme");
-          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-          if (saved === "dark" || (!saved && prefersDark)) {
-            document.documentElement.classList.add("dark");
-          }
+          var dark =
+            saved === "dark" ||
+            (saved !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", dark);
+          document
+            .querySelector('meta[name="theme-color"]')
+            .setAttribute("content", dark ? "#050414" : "#f6f4ff");
         } catch (e) {}
       })();
     </script>
+
+    <!-- Icons & manifest -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Alexis Mialon" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://vorpalin.github.io/" />
+    <meta property="og:title" content="Alexis Mialon | Portfolio" />
+    <meta
+      property="og:description"
+      content="AI student, researcher and developer. Projects, experience and CV."
+    />
+    <meta property="og:image" content="https://vorpalin.github.io/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Alexis Mialon, AI & research student and developer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alexis Mialon | Portfolio" />
+    <meta
+      name="twitter:description"
+      content="AI student, researcher and developer. Projects, experience and CV."
+    />
+    <meta name="twitter:image" content="https://vorpalin.github.io/og-image.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://vorpalin.github.io/#website",
+            "url": "https://vorpalin.github.io/",
+            "name": "Alexis Mialon | Portfolio",
+            "inLanguage": "en",
+            "author": { "@id": "https://vorpalin.github.io/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://vorpalin.github.io/#person",
+            "name": "Alexis Mialon",
+            "url": "https://vorpalin.github.io/",
+            "jobTitle": "Computer Science Engineering student",
+            "affiliation": { "@type": "CollegeOrUniversity", "name": "EPITA" },
+            "knowsAbout": [
+              "Artificial intelligence",
+              "Cryptanalysis",
+              "Algorithms",
+              "Systems programming"
+            ],
+            "sameAs": [
+              "https://github.com/Vorpalin",
+              "https://www.linkedin.com/in/alexis-mialon-79117b329/"
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <main style="max-width: 40rem; margin: 4rem auto; padding: 0 1.5rem; font-family: sans-serif">
+        <h1>Alexis Mialon</h1>
+        <p>
+          Computer science engineering student at EPITA, AI and research student, and developer.
+        </p>
+        <p>This portfolio needs JavaScript to display. In the meantime:</p>
+        <ul>
+          <li><a href="/CV_Alexis_MIALON.pdf">Download my CV (PDF)</a></li>
+          <li><a href="https://github.com/Vorpalin">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/alexis-mialon-79117b329/">LinkedIn</a></li>
+        </ul>
+      </main>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

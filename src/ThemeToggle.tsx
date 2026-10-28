@@ -1,29 +1,62 @@
-import { useEffect, useState } from "react";
+import { useEffect, useSyncExternalStore } from "react";
 import { FiSun, FiMoon } from "react-icons/fi";
 
-type Theme = "light" | "dark";
+const root = document.documentElement;
+
+// The <html> class is the single source of truth, so every toggle instance stays in sync.
+function subscribe(callback: () => void) {
+  const observer = new MutationObserver(callback);
+  observer.observe(root, { attributes: true, attributeFilter: ["class"] });
+  return () => observer.disconnect();
+}
+const getSnapshot = () => root.classList.contains("dark");
+
+function applyTheme(dark: boolean) {
+  root.classList.toggle("dark", dark);
+  document
+    .querySelector('meta[name="theme-color"]')
+    ?.setAttribute("content", dark ? "#050414" : "#f6f4ff");
+}
+
+function hasSavedChoice() {
+  try {
+    return localStorage.getItem("theme") !== null;
+  } catch {
+    return false;
+  }
+}
 
 function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(() =>
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  const isDark = useSyncExternalStore(subscribe, getSnapshot);
 
+  // Follow the OS setting until the visitor makes an explicit choice
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", theme === "dark");
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const onChange = (e: MediaQueryListEvent) => {
+      if (!hasSavedChoice()) applyTheme(e.matches);
+    };
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  }, []);
+
+  const toggle = () => {
+    const next = !isDark;
+    applyTheme(next);
     try {
-      localStorage.setItem("theme", theme);
+      localStorage.setItem("theme", next ? "dark" : "light");
     } catch {
-      /* IGNORE */
+      /* storage unavailable: the choice just won't persist */
     }
-  }, [theme]);
+  };
 
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-      className="focus-visible text-muted transition-colors hover:text-[#8245ec]"
+      type="button"
+      onClick={toggle}
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      className="inline-flex size-11 items-center justify-center rounded-lg text-muted transition-colors hover:text-accent"
     >
-      {theme === "dark" ? <FiSun size={22} /> : <FiMoon size={22} />}
+      {isDark ? <FiSun size={22} aria-hidden="true" /> : <FiMoon size={22} aria-hidden="true" />}
     </button>
   );
 }

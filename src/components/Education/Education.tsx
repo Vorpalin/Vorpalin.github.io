@@ -5,11 +5,14 @@ function Education() {
   return (
     <section
       id="education"
+      aria-labelledby="education-title"
       className="px-5 py-16 pb-[calc(4rem+var(--cut))] font-sans clip-path-custom-2 bg-skills-gradient sm:px-[7vw] sm:py-24 sm:pb-[calc(6rem+var(--cut))] lg:px-[12vw]"
     >
       {/* Section Title */}
       <div className="mb-12 text-center sm:mb-16">
-        <h2 className="text-3xl font-bold text-content sm:text-4xl">EDUCATION</h2>
+        <h2 id="education-title" className="text-3xl font-bold text-content sm:text-4xl">
+          EDUCATION
+        </h2>
         <div className="mx-auto mt-4 h-1 w-32 bg-purple-500"></div>
         <p className="mt-4 text-base font-semibold text-muted sm:text-lg">
           My education has been a journey of learning and development. Here are the details of my
@@ -20,19 +23,28 @@ function Education() {
       {/* Education Timeline */}
       <div className="relative">
         {/* Vertical line */}
-        <div className="absolute top-0 left-5 h-full w-1 -translate-x-1/2 bg-content/40 sm:left-1/2" />
+        <div
+          aria-hidden="true"
+          className="absolute top-0 left-5 h-full w-1 -translate-x-1/2 bg-content/40 sm:left-1/2" />
 
         {education.map((edu, index) => (
           <Reveal key={edu.id} delay={(edu.id + 1) * 100}>
             <div
-              key={edu.id}
               className={`relative mb-10 flex pl-14 last:mb-0 sm:mb-16 sm:pl-0 ${
                 index % 2 === 0 ? "sm:justify-start" : "sm:justify-end"
               }`}
             >
               {/* Timeline Circle */}
               <div className="absolute top-4 left-5 z-10 h-10 w-10 -translate-x-1/2 overflow-hidden rounded-full border-4 border-[#8245ec] bg-gray-400 sm:top-6 sm:left-1/2 sm:h-14 sm:w-14">
-                <img src={edu.img} alt={edu.school} className="h-full w-full object-cover" />
+                <img
+                  src={edu.img}
+                  alt=""
+                  width={56}
+                  height={56}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
               </div>
 
               {/* Card */}
@@ -40,7 +52,15 @@ function Education() {
                 <div className="flex items-center gap-4 sm:gap-6">
                   {/* School logo */}
                   <div className="h-14 w-20 shrink-0 overflow-hidden rounded-md bg-content/40 sm:h-16 sm:w-24">
-                    <img src={edu.img} alt={edu.school} className="h-full w-full object-cover" />
+                    <img
+                      src={edu.img}
+                      alt={`${edu.school} logo`}
+                      width={96}
+                      height={64}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover"
+                    />
                   </div>
 
                   {/* Degree, school, date */}

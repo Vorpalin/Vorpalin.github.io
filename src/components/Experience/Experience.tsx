@@ -5,11 +5,14 @@ function Experience() {
   return (
     <section
       id="experience"
+      aria-labelledby="experience-title"
       className="px-5 py-16 pb-[calc(4rem+var(--cut))] font-sans clip-path-custom-2 bg-skills-gradient sm:px-[7vw] sm:py-24 sm:pb-[calc(6rem+var(--cut))] lg:px-[12vw]"
     >
       {/* Section Title */}
       <div className="mb-12 text-center sm:mb-16">
-        <h2 className="text-3xl font-bold text-content sm:text-4xl">EXPERIENCE</h2>
+        <h2 id="experience-title" className="text-3xl font-bold text-content sm:text-4xl">
+          EXPERIENCE
+        </h2>
         <div className="mx-auto mt-4 h-1 w-32 bg-purple-500"></div>
         <p className="mt-4 text-base font-semibold text-muted sm:text-lg">
           A collection of my work experience and the roles I have taken in various organizations
@@ -19,12 +22,13 @@ function Experience() {
       {/* Experience Timeline */}
       <div className="relative">
         {/* Vertical line */}
-        <div className="absolute top-0 left-5 h-full w-1 -translate-x-1/2 bg-content/40 sm:left-1/2" />
+        <div
+          aria-hidden="true"
+          className="absolute top-0 left-5 h-full w-1 -translate-x-1/2 bg-content/40 sm:left-1/2" />
 
         {experiences.map((experience, index) => (
           <Reveal key={experience.id} delay={(experience.id + 1) * 100}>
             <div
-              key={experience.id}
               className={`relative mb-10 flex pl-14 last:mb-0 sm:mb-16 sm:pl-0 ${
                 index % 2 === 0 ? "sm:justify-end" : "sm:justify-start"
               }`}
@@ -33,7 +37,11 @@ function Experience() {
               <div className="absolute top-4 left-5 z-10 h-10 w-10 -translate-x-1/2 overflow-hidden rounded-full border-4 border-[#8245ec] bg-gray-400 sm:top-6 sm:left-1/2 sm:h-14 sm:w-14">
                 <img
                   src={experience.img}
-                  alt={experience.company}
+                  alt=""
+                  width={56}
+                  height={56}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -45,7 +53,11 @@ function Experience() {
                   <div className="h-14 w-14 shrink-0 overflow-hidden rounded-md bg-content/40 sm:h-16 sm:w-16">
                     <img
                       src={experience.img}
-                      alt={experience.company}
+                      alt={`${experience.company} logo`}
+                      width={64}
+                      height={64}
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover"
                     />
                   </div>
@@ -62,7 +74,9 @@ function Experience() {
                   </div>
                 </div>
 
-                <p className="mt-4 text-sm text-muted sm:text-base">{experience.desc}</p>
+                <p className="mt-4 text-sm whitespace-pre-line text-muted sm:text-base">
+                  {experience.desc}
+                </p>
 
                 <div className="mt-4">
                   <h5 className="font-medium text-content">Skills:</h5>

@@ -9,7 +9,8 @@ function BlurBlob({ position, size }: BlurBlobProps) {
 
   return (
     <div
-      className="absolute"
+      aria-hidden="true"
+      className="pointer-events-none absolute"
       style={{
         top: top,
         left: left,
@@ -18,7 +19,7 @@ function BlurBlob({ position, size }: BlurBlobProps) {
         transform: "translate(-50%, -50%)",
       }}
     >
-      <div className="h-full w-full animate-blob rounded-full bg-purple-500/15 blur-3xl dark:bg-purple-500/20"></div>
+      <div className="h-full w-full animate-blob rounded-full motion-reduce:animate-none bg-purple-500/15 blur-3xl dark:bg-purple-500/20"></div>
     </div>
   );
 }

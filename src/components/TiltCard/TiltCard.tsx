@@ -1,6 +1,7 @@
-import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
+import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "motion/react";
 
 function TiltCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  const reduceMotion = useReducedMotion();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [12, -12]), {
@@ -11,6 +12,11 @@ function TiltCard({ children, className = "" }: { children: React.ReactNode; cla
     stiffness: 200,
     damping: 20,
   });
+
+  // Respect "reduce motion": no tilt or zoom, just the static card
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
 
   return (
     <motion.div

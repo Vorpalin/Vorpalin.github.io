@@ -1,42 +1,42 @@
 // Skills Section Logo's
-import htmlLogo from "./assets/tech_logo/html.png";
-import cssLogo from "./assets/tech_logo/css.png";
-import javascriptLogo from "./assets/tech_logo/javascript.png";
-import reactjsLogo from "./assets/tech_logo/reactjs.png";
-import tailwindcssLogo from "./assets/tech_logo/tailwindcss.png";
-import nodejsLogo from "./assets/tech_logo/nodejs.png";
-import expressjsLogo from "./assets/tech_logo/express.png";
-import mysqlLogo from "./assets/tech_logo/mysql.png";
-import cLogo from "./assets/tech_logo/c.png";
-import cppLogo from "./assets/tech_logo/cpp.png";
-import javaLogo from "./assets/tech_logo/java.png";
-import pythonLogo from "./assets/tech_logo/python.png";
-import typescriptLogo from "./assets/tech_logo/typescript.png";
-import gitLogo from "./assets/tech_logo/git.png";
-import githubLogo from "./assets/tech_logo/github.png";
-import vscodeLogo from "./assets/tech_logo/vscode.png";
-import postgreLogo from "./assets/tech_logo/postgre.png";
-import csharpLogo from "./assets/tech_logo/csharp.png";
-import dockerLogo from "./assets/tech_logo/docker.png";
-import gitlabLogo from "./assets/tech_logo/gitlab.png";
-import unityLogo from "./assets/tech_logo/unity.png";
-import quarkusLogo from "./assets/tech_logo/quarkus.png";
+import htmlLogo from "./assets/tech_logo/html.webp";
+import cssLogo from "./assets/tech_logo/css.webp";
+import javascriptLogo from "./assets/tech_logo/javascript.webp";
+import reactjsLogo from "./assets/tech_logo/reactjs.webp";
+import tailwindcssLogo from "./assets/tech_logo/tailwindcss.webp";
+import nodejsLogo from "./assets/tech_logo/nodejs.webp";
+import expressjsLogo from "./assets/tech_logo/express.webp";
+import mysqlLogo from "./assets/tech_logo/mysql.webp";
+import cLogo from "./assets/tech_logo/c.webp";
+import cppLogo from "./assets/tech_logo/cpp.webp";
+import javaLogo from "./assets/tech_logo/java.webp";
+import pythonLogo from "./assets/tech_logo/python.webp";
+import typescriptLogo from "./assets/tech_logo/typescript.webp";
+import gitLogo from "./assets/tech_logo/git.webp";
+import githubLogo from "./assets/tech_logo/github.webp";
+import vscodeLogo from "./assets/tech_logo/vscode.webp";
+import postgreLogo from "./assets/tech_logo/postgre.webp";
+import csharpLogo from "./assets/tech_logo/csharp.webp";
+import dockerLogo from "./assets/tech_logo/docker.webp";
+import gitlabLogo from "./assets/tech_logo/gitlab.webp";
+import unityLogo from "./assets/tech_logo/unity.webp";
+import quarkusLogo from "./assets/tech_logo/quarkus.webp";
 
 // Experience Section Logo's
-import opensee from "./assets/company_logo/opensee.jpg";
-import lre from "./assets/company_logo/lre.jpg";
-import supbiotech from "./assets/company_logo/supbiotech.jpg";
+import opensee from "./assets/company_logo/opensee.webp";
+import lre from "./assets/company_logo/lre.webp";
+import supbiotech from "./assets/company_logo/supbiotech.webp";
 
 // Education Section Logo's
 
-import epita from "./assets/education_logo/epita.jpg";
-import centria from "./assets/education_logo/centria.png";
+import epita from "./assets/education_logo/epita.webp";
+import centria from "./assets/education_logo/centria.webp";
 
 // Projects Section Logo's
-import monster_binder from "./assets/project_logo/monster_binder.jpg";
-import portfolio_website from "./assets/project_logo/portfolio_website.png";
-import simucorp from "./assets/project_logo/simucorp.jpg";
-import emulator_collections from "./assets/project_logo/emulator_collections.png";
+import monster_binder from "./assets/project_logo/monster_binder.webp";
+import portfolio_website from "./assets/project_logo/portfolio_website.webp";
+import simucorp from "./assets/project_logo/simucorp.webp";
+import emulator_collections from "./assets/project_logo/emulator_collections.webp";
 
 export const SkillsInfo = [
   {
@@ -75,7 +75,7 @@ export const SkillsInfo = [
     title: "Tools",
     skills: [
       { name: "Git", logo: gitLogo },
-      { name: "GitHub", logo: githubLogo },
+      { name: "GitHub", logo: githubLogo, invertOnDark: true },
       { name: "GitLab", logo: gitlabLogo },
       { name: "VS Code", logo: vscodeLogo },
       { name: "Docker", logo: dockerLogo },
@@ -100,7 +100,7 @@ export const experiences = [
     role: "Research Student",
     company: "LRE",
     date: "February 2026 - July 2026",
-    desc: "Research student within the system security team.\nThe goal of this project is to optimize the active S-box minimization step of the TAGADA differential cryptanalysis tool by implementing multithreaded dynamic deprogramming algorithms in C++, while accounting for the library format.",
+    desc: "Research student within the system security team.\nThe goal of this project is to optimize the active S-box minimization step of the TAGADA differential cryptanalysis tool by implementing multithreaded dynamic programming algorithms in C++, while accounting for the library format.",
     skills: ["C++", "Docker"],
   },
   {
@@ -147,7 +147,7 @@ export const education = [
 export const projects = [
   {
     id: 0,
-    title: "Porfolio website",
+    title: "Portfolio website",
     description: "This portfolio website",
     image: portfolio_website,
     tags: ["HTML", "CSS", "TypeScript", "React JS"],

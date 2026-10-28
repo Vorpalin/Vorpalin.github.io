@@ -1,29 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-* {
-  font-family: "Poppins", sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 /* Theme tokens */
 :root {
+  color-scheme: light;
   --page: #f6f4ff;
   --surface: #ffffff;
   --content: #1a1633;
   --muted: #5b5675;
   --line: rgba(26, 22, 51, 0.15);
+  /* Accent used for TEXT. WCAG AA: 6.5:1 on --page (light), 7.5:1 on --page (dark) */
+  --accent: #6d28d9;
 }
 .dark {
+  color-scheme: dark;
   --page: #050414;
   --surface: #111827;
   --content: #ffffff;
   --muted: #9ca3af;
   --line: rgba(255, 255, 255, 0.3);
+  --accent: #a78bfa;
 }
 
 @theme inline {
@@ -32,6 +28,27 @@ html {
   --color-content: var(--content);
   --color-muted: var(--muted);
   --color-line: var(--line);
+  --color-accent: var(--accent);
+}
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  /* Anchored sections must not hide under the fixed navbar */
+  scroll-padding-top: 5rem;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Visible keyboard focus everywhere (WCAG 2.4.7) */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 @theme {
