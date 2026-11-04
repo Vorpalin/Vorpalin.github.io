@@ -16,8 +16,10 @@ permissions:
   pages: write
   id-token: write
 
+# Keep PR checks isolated from Pages deployments. Otherwise a PR run can
+# cancel an in-progress push-to-main deployment because both share one group.
 concurrency:
-  group: pages
+  group: ${{ github.event_name == 'pull_request' && format('pages-pr-{0}', github.event.pull_request.number) || 'pages-main' }}
   cancel-in-progress: true
 
 jobs:
